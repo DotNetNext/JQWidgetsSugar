@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var source =
+            {
+                url: "/Grid/Data",
+                cache: false,
+                datafields:
+                [
+                    { name: 'name', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'available', type: 'bool' },
+                    { name: 'date', type: 'date' },
+                    { name: 'quantity', type: 'number' }
+                ],
+                beforeprocessing: function (data) {
+
+                    this.totalrecords = 11;
+
+
+                },
+                pager: function (pagenum, pagesize, oldpagenum) {
+                    alert(1)
+                },
+                filter: function () {
+                    // update the grid and send a request to the server.
+                    $("#jqxgrid").jqxGrid('updatebounddata', 'filter');
+                },
+                sort: function () {
+                    // update the grid and send a request to the server.
+                    $("#jqxgrid").jqxGrid('updatebounddata', 'sort');
+                },
+
+                datatype: "json"
+            };
+
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+            $("#jqxgrid").jqxGrid(
+            {
+                width: 850,
+                source: dataAdapter,
+                showfilterrow: true,
+                filterable: true,
+                pageable: true,
+                sortable: true,
+                selectionmode: 'multiplecellsextended',
+                columns: [
+                  { text: 'Name', columntype: 'textbox', filtertype: 'input', datafield: 'name', width: 215 },
+                  {
+                      text: 'Product', filtertype: 'checkedlist', datafield: 'productname', width: 220
+                  },
+                  { text: 'Available', datafield: 'available', columntype: 'checkbox', filtertype: 'bool', width: 67 },
+                  { text: 'Ship Date', datafield: 'date', filtertype: 'range', width: 210, cellsalign: 'right', cellsformat: 'd' },
+                  { text: 'Qty.', datafield: 'quantity', filtertype: 'number', cellsalign: 'right' }
+                ]
+            });
+
+
+
+        });
+
+               
+    </script>
+}
+<div id="jqxgrid">
+</div>

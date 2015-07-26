@@ -1,0 +1,5 @@
+D:\工作\NetJQWidgets\LibJqWeigets\bin\Debug\LibJqWeigets.dll
+D:\工作\NetJQWidgets\LibJqWeigets\bin\Debug\LibJqWeigets.pdb
+D:\工作\NetJQWidgets\LibJqWeigets\obj\Debug\ResolveAssemblyReference.cache
+D:\工作\NetJQWidgets\LibJqWeigets\obj\Debug\LibJqWeigets.dll
+D:\工作\NetJQWidgets\LibJqWeigets\obj\Debug\LibJqWeigets.pdb

@@ -1,0 +1,7 @@
+D:\工作\NetJQWidgets\NetJQWidgets\bin\NetJQWidgets.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\NetJQWidgets.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\EntityFramework.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\EntityFramework.xml
+D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\ResolveAssemblyReference.cache
+D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.dll
+D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.pdb
