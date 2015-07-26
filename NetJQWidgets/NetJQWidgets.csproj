@@ -37,6 +37,10 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SqlSugar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -63,6 +67,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuilderClass.aspx.cs">
+      <DependentUpon>BuilderClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuilderClass.aspx.designer.cs">
+      <DependentUpon>BuilderClass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -72,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuilderClass.aspx" />
     <Content Include="Content\jqwidgets-ver3.8.1\demos\jquerymobile\fixed-header-and-footer.htm" />
     <Content Include="Content\jqwidgets-ver3.8.1\demos\jquerymobile\jquerymobile.htm" />
     <Content Include="Content\jqwidgets-ver3.8.1\demos\jquerymobile\three-column-grid-layout.htm" />
@@ -1732,6 +1744,8 @@
     <Content Include="Content\jqwidgets-ver3.8.1\styles\qunit-git.css" />
     <Content Include="Content\jqwidgets-ver3.8.1\styles\site.css" />
     <Content Include="Content\jqwidgets-ver3.8.1\styles\widget_icons.png" />
+    <Content Include="Content\lib\SqlSugar.dll" />
+    <Content Include="Content\lib\SqlSugar.pdb" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -1885,6 +1899,20 @@
     <None Include="Content\jqwidgets-ver3.8.1\scripts\jquery.mobile-1.4.3.min.map" />
     <Content Include="Views\Grid\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{6E5B7D74-0C3D-4D6D-B092-5B09147A44CA}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JQWidgetsSugar\JQWidgetsSugar.csproj">
+      <Project>{D964CF86-E66E-4B37-990D-590EEC075BD9}</Project>
+      <Name>JQWidgetsSugar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{6EC0CA0F-4502-4228-BFF9-33D080A12457}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

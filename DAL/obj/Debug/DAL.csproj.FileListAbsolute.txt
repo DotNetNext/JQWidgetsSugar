@@ -1,0 +1,7 @@
+D:\工作\NetJQWidgets\DAL\bin\Debug\DAL.dll
+D:\工作\NetJQWidgets\DAL\bin\Debug\DAL.pdb
+D:\工作\NetJQWidgets\DAL\bin\Debug\SqlSugar.dll
+D:\工作\NetJQWidgets\DAL\bin\Debug\SqlSugar.pdb
+D:\工作\NetJQWidgets\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\工作\NetJQWidgets\DAL\obj\Debug\DAL.dll
+D:\工作\NetJQWidgets\DAL\obj\Debug\DAL.pdb

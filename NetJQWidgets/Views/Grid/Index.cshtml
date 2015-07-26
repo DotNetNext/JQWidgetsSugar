@@ -6,11 +6,9 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-
             var source =
             {
                 url: "/Grid/Data",
-                cache: false,
                 datafields:
                 [
                     { name: 'name', type: 'string' },
@@ -19,38 +17,26 @@
                     { name: 'date', type: 'date' },
                     { name: 'quantity', type: 'number' }
                 ],
-                beforeprocessing: function (data) {
-
-                    this.totalrecords = 11;
-
-
-                },
-                pager: function (pagenum, pagesize, oldpagenum) {
-                    alert(1)
-                },
-                filter: function () {
-                    // update the grid and send a request to the server.
-                    $("#jqxgrid").jqxGrid('updatebounddata', 'filter');
-                },
-                sort: function () {
-                    // update the grid and send a request to the server.
-                    $("#jqxgrid").jqxGrid('updatebounddata', 'sort');
-                },
-
                 datatype: "json"
             };
 
-            var dataAdapter = new $.jqx.dataAdapter(source);
+            var dataAdapter = new $.jqx.dataAdapter(source, {
+                downloadComplete: function (data) {
+                    source.totalrecords = data.TotalRows;
+                }
+            });
 
-            $("#jqxgrid").jqxGrid(
+            $("#jqxgrid").jqxDataTable(
             {
                 width: 850,
                 source: dataAdapter,
-                showfilterrow: true,
+                theme: 'arctic',
+                pageSize: 5,
+                pagerMode: 'advanced',
+                sortable: true,
                 filterable: true,
                 pageable: true,
-                sortable: true,
-                selectionmode: 'multiplecellsextended',
+                serverProcessing: true,
                 columns: [
                   { text: 'Name', columntype: 'textbox', filtertype: 'input', datafield: 'name', width: 215 },
                   {

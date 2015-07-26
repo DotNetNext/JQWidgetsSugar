@@ -5,3 +5,11 @@ D:\工作\NetJQWidgets\NetJQWidgets\bin\EntityFramework.xml
 D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\ResolveAssemblyReference.cache
 D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.dll
 D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\DAL.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\SqlSugar.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\DAL.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\SqlSugar.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\JQWidgetsSugar.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\Models.dll
+D:\工作\NetJQWidgets\NetJQWidgets\bin\JQWidgetsSugar.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\Models.pdb
