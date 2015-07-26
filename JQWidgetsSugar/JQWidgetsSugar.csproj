@@ -44,9 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JQXGrid.cs" />
-    <Compile Include="GridModel.cs" />
-    <Compile Include="JQXGridParams.cs" />
+    <Compile Include="Columns.cs" />
+    <Compile Include="DataAdapterSource.cs" />
+    <Compile Include="Grid\GridModel\GridDatafield.cs" />
+    <Compile Include="Grid\GridModel\GridTable.cs" />
+    <Compile Include="Grid\JQXGrid.cs" />
+    <Compile Include="Grid\JsonResultModel.cs" />
+    <Compile Include="Grid\GridModel\GridSearchParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

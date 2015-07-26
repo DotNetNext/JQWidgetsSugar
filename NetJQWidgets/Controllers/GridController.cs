@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NetJQWidgets.Models;
 using SqlSugar;
 using DAL;
 using JQWidgetsSugar;
@@ -17,12 +16,12 @@ namespace NetJQWidgets.Controllers
             return View();
         }
         [OutputCache(Duration = 0)]
-        public JsonResult Data(JQXGridParams pars)
+        public JsonResult Data(GridSearchParams pars)
         {
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
                 var sable = db.Sqlable().Form("GridTable", "g");
-                var model = JQXGrid.GetWidgetsSource<GridTable>(sable, pars);
+                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars);
                 return Json(model, JsonRequestBehavior.AllowGet);
             }
         }

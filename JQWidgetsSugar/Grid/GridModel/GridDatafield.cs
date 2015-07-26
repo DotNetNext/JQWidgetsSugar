@@ -5,9 +5,9 @@ using System.Text;
 
 namespace JQWidgetsSugar
 {
-    public class GridModel<T>
+    public class GridDatafield
     {
-        public int TotalRows { get; set; }
-        public List<T> Rows { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
     }
 }

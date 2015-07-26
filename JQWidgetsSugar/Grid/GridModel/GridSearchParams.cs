@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JQWidgetsSugar
 {
-    public class JQXGridParams
+    public class GridSearchParams
     {
         public string sortdatafield { get; set; }
         public string sortorder { get; set; }

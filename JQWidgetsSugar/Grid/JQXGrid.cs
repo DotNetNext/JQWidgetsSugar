@@ -7,7 +7,7 @@ namespace JQWidgetsSugar
 {
     public class JQXGrid
     {
-        public static GridModel<T> GetWidgetsSource<T>(Sqlable sable,JQXGridParams pars) where T : class
+        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable,GridSearchParams pars) where T : class
         {
             var query = System.Web.HttpContext.Current.Request.QueryString;
             Type type = typeof(T);
@@ -21,7 +21,7 @@ namespace JQWidgetsSugar
             orderBy="getdate()";
             }
             var rows = sable.SelectToPageList<T>("*", orderBy, pars.pagenum+1, pars.pagesize);
-            var result = new GridModel<T>()
+            var result = new JsonResultModel<T>()
             {
                 TotalRows = sable.Count(),
                 Rows = rows
