@@ -1898,6 +1898,7 @@
     <None Include="Content\jqwidgets-ver3.8.1\scripts\jquery.mobile-1.4.3.min.map" />
     <Content Include="Views\Grid\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Grid\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
@@ -1933,7 +1934,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>35400</DevelopmentServerPort>
+          <DevelopmentServerPort>11737</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

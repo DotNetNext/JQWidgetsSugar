@@ -20,6 +20,6 @@ namespace JQWidgetsSugar
         public int toolbarHeight = 35;
         public string renderToolbar { get; set; }
         public bool serverProcessing = true;
-        public List<Columns> columns { get; set; }
+        public List<GridColumn> columns { get; set; }
     }
 }

@@ -15,6 +15,12 @@ namespace NetJQWidgets.Controllers
         {
             return View();
         }
+
+        public ActionResult Index2()
+        {
+            return View();
+        }
+
         [OutputCache(Duration = 0)]
         public JsonResult Data(GridSearchParams pars)
         {
