@@ -66,4 +66,29 @@ function jqxWindow(selector, title, width, height) {
 }
 
 
+
+
+
+function jqxDelete(options) {
+    var gridSelector = options.gridSelector;
+    var url = options.url;
+    var data = options.data;
+    jqxConfirm(function () {
+        $.ajax({
+            type: "delete",
+            url: url,
+            data: data,
+            dataType: "json",
+            success: function (msg) {
+                if (msg.isSuccess == false) {
+                    jqxAlert(msg.respnseInfo);
+                }
+                $(gridSelector).jqxDataTable('updateBoundData');
+            }, error: function (msg) {
+                console.log(msg);
+            }
+        })
+    }, "您确定要删除吗？")
+}
+ 
  

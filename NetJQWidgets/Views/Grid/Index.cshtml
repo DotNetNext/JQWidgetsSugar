@@ -15,12 +15,39 @@
 
         //添加
         function add(row) {
+            save(row, true);
+        }
+
+        //编辑
+        function edit(row) {
+            save(row, false);
+        }
+
+        //删除
+        function del(row) {
+            if (row == null) {
+                jqxAlert('请选择一条记录！')
+            } else {
+                jqxDelete({ gridSelector: "#netgrid",
+                    url: "/Grid/Del",
+                    data: { id: row.id }
+                });
+            }
+        }
+
+        function save(row, isAdd) {
+            var isEdit = !isAdd;
+            if (isEdit) {
+                if (row == null) {
+                    jqxAlert('请选择一条记录！')
+                    return;
+                }
+            }
             //弹出框
-            jqxWindow("#editbox", "添加", 400, "auto");
+            jqxWindow("#editbox", "编辑", 400, "auto");
 
             //美化 button
             $("#editbox button").jqxButton();
-
 
             //取消事件
             $('#cancel').unbind();
@@ -28,16 +55,24 @@
                 $("#editbox").jqxWindow("close")
             });
 
-            //清空表单
-            $("#frmtable").formClear();
-
-            $('#save').unbind();
+            if (isAdd) {
+                //清空表单
+                $("#frmtable").formClear();
+            } else {
+                //格日化日期
+                row.date = $.convert.toDate(row.date, "yyyy-MM-dd")
+                //通过JSON自动填充表单，也可以自已实现
+                $("#frmtable").formFill({ data: row })
+            }
             //确定事件
+            $('#save').unbind();
             $('#save').on('click', function (e) {
                 factory.ajaxSubmit(function () {
+                    var url = isAdd ? "/grid/add" : "/grid/edit";
+                    var type = isAdd ? "post" : "put";
                     $("#frmtable").ajaxSubmit({
-                        url: "/grid/add",
-                        type: "post",
+                        url: url,
+                        type: type,
                         success: function (msg) {
                             if (msg.isSuccess == false) {
                                 jqxAlert(msg.respnseInfo);
@@ -50,81 +85,15 @@
                     })
                 });
             });
+
         }
 
-        //编辑
-        function edit(row) {
-            if (row == null) {
-                jqxAlert('请选择一条记录！')
-            } else {
-                //弹出框
-                jqxWindow("#editbox", "编辑", 400, "auto");
 
-                //美化 button
-                $("#editbox button").jqxButton();
-
-                //取消事件
-                $('#cancel').unbind();
-                $('#cancel').on('click', function (e) {
-                    $("#editbox").jqxWindow("close")
-                });
-
-                //格日化日期
-                row.date = $.convert.toDate(row.date, "yyyy-MM-dd")
-                //通过JSON自动填充表单，也可以自已实现
-                $("#frmtable").formFill({ data: row })
-
-                //确定事件
-                $('#save').unbind();
-                $('#save').on('click', function (e) {
-                    factory.ajaxSubmit(function () {
-                        $("#frmtable").ajaxSubmit({
-                            url: "/grid/edit",
-                            type: "put",
-                            success: function (msg) {
-                                if (msg.isSuccess == false) {
-                                    jqxAlert(msg.respnseInfo);
-                                }
-                                $("#netgrid").jqxDataTable('updateBoundData');
-                                $("#editbox").jqxWindow("close")
-                            }, error: function (msg) {
-                                console.log(msg);
-                            }
-                        })
-                    });
-                });
-            }
-        }
-
-        //删除
-        function del(row) {
-            if (row == null) {
-                jqxAlert('请选择一条记录！')
-            } else {
-                jqxConfirm(function () {
-                    $.ajax({
-                        type: "delete",
-                        url: "/Grid/Del",
-                        data: { id: row.id },
-                        dataType: "json",
-                        success: function (msg) {
-                            if (msg.isSuccess == false) {
-                                jqxAlert(msg.respnseInfo);
-                            }
-                            $("#netgrid").jqxDataTable('updateBoundData');
-                        }, error: function (msg) {
-                            console.log(msg);
-                        }
-                    })
-                }, "您确定要删除吗？")
-
-            }
-        }
 
         //绑定验证
         $(function () {
             window.factory = new validateFactory($("form"), "<img src=\"/Content/jquery-validation-1.13.1/error.png\" />");
-            factory.init();
+//            factory.init();
 
         });
     </script>
