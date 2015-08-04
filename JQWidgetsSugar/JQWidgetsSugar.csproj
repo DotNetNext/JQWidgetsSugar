@@ -52,6 +52,7 @@
     <Compile Include="Grid\JQXGrid.cs" />
     <Compile Include="Grid\JsonResultModel.cs" />
     <Compile Include="Grid\GridModel\GridSearchParams.cs" />
+    <Compile Include="ActionResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

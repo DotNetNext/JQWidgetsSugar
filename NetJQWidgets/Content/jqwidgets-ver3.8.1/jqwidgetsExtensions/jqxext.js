@@ -1,7 +1,7 @@
-﻿function jqxAlert(msg,title) {
+﻿function jqxAlert(msg, title) {
     if (title == null) title = "消息提醒";
     var html = "<div id=\"eventWindow\" >" +
-    "<div>" +title+
+    "<div>" + title +
         "</div>" +
     "<div>" +
     "<div class=\"body\">" +
@@ -27,7 +27,7 @@
 function jqxConfirm(okFun, msg, title) {
     if (title == null) title = "消息提醒";
     var html = "<div id=\"eventWindow\" >" +
-    "<div>" +title+
+    "<div>" + title +
         " </div>" +
     "<div>" +
     "<div class=\"body\">" +
@@ -58,3 +58,12 @@ function jqxConfirm(okFun, msg, title) {
     });
 
 }
+
+function jqxWindow(selector, title, width, height) {
+    $(selector).show();
+    $(selector).jqxWindow({ width: width, height: height, isModal: true, modalOpacity: 0.3 });
+    $(selector).jqxWindow('setTitle', title);
+}
+
+
+ 

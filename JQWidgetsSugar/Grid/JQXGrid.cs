@@ -36,7 +36,7 @@ namespace JQWidgetsSugar
         }
 
 
-        public static string BindGrid(string gridSelector, GridDataAdapterSource gda, GridConfig gc)
+        public static object BindGrid(string gridSelector, GridDataAdapterSource gda, GridConfig gc)
         {
 
             if (gda.datafields == null || gda.datafields.Count == 0)
@@ -68,7 +68,9 @@ namespace JQWidgetsSugar
             reval = reval
                         .Replace("\"${toolbar}\"", GetToolbar(gridSelector, gc))
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter");
-            return string.Format("$(function(){{  {0} }})", reval);
+            reval= string.Format("$(function(){{  {0} }})", reval);
+            reval = ("<script>\r\n")+reval+("\n\r</script>");
+            return reval;
         }
 
         private static string GetToolbar(string gridSelector, GridConfig gc)
@@ -106,7 +108,7 @@ namespace JQWidgetsSugar
                 sb.AppendFormat(@"
                     {0}.jqxButton({{ cursor: ""pointer"", enableDefault: false, height: 25, width: 25 }});
                     {0}.find('div:first').addClass(toTheme('{2}'));
-                    {0}.jqxTooltip({{ position: 'bottom', content: ""{2}"" }});", it.name, it.title, it.icon);
+                    {0}.jqxTooltip({{ position: 'bottom', content: ""{1}"" }});", it.name, it.title, it.icon);
                 sb.AppendLine();
             });
          

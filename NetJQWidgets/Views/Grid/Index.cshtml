@@ -3,45 +3,169 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using JQWidgetsSugar
-@{
-    var adp = new GridDataAdapterSource();
-    adp.url = "/Grid/Data";
-    var gc = new GridConfig();
-    gc.gridbuttons = new List<GridButton>()
-    {
-       new GridButton(){ click="add", name="addbutton", icon="jqx-icon-plus", title="add"},
-       new GridButton(){ click="edit", name="editbutton", icon="jqx-icon-edit", title="edit"}
-    };
-    gc.pageSize = 5;
-    gc.width = "500";
-    gc.columns = new List<GridColumn>(){
-       new GridColumn(){ text="编号", datafield="id", width="40px", cellsalign=AlignType.center,datatype=Datatype.dataint },
-       new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.center,datatype=Datatype.datastring },
-       new GridColumn(){ text="产品名", datafield="productname", cellsalign=AlignType.center,datatype=Datatype.datastring },
-       new GridColumn(){ text="数量", datafield="quantity" , datatype=Datatype.dataint},
-       new GridColumn(){ text="创建时间", datafield="date", cellsformat="d",cellsalign=AlignType.right, datatype=Datatype.datadate
-      }
-    };
-    var grid = JQXGrid.BindGrid("#netgrid", adp, gc);
-}
 @section head{
+    <script src="/Content/My97DatePickerBeta/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <link href="/Content/My97DatePickerBeta/My97DatePicker/skin/WdatePicker.css" rel="stylesheet"
+        type="text/css" />
+    <script src="/Content/jquery-validation-1.13.1/dist/jquery.validate.min.js" type="text/javascript"></script>
+    <link href="/Content/jquery-validation-1.13.1/validation.sugar.css" rel="stylesheet"
+        type="text/css" />
+    <script src="/Content/jquery-validation-1.13.1/validation.sugar.js" type="text/javascript"></script>
     <script type="text/javascript">
+
+        //添加
         function add(row) {
-            jqxAlert("add")
+            //弹出框
+            jqxWindow("#editbox", "添加", 280, 250);
+
+            //美化input button
+            $("#editbox button").jqxButton();
+            $("#editbox input:text").jqxInput({ height: 25 });
+
+            //取消事件
+            $('#cancel').unbind();
+            $('#cancel').on('click', function (e) {
+                $("#editbox").jqxWindow("close")
+            });
+
+            //清空表单
+            $("#frmtable").formClear();
+
+            $('#save').unbind();
+            //确定事件
+            $('#save').on('click', function (e) {
+                $("#frmtable").ajaxSubmit({
+                    url: "/grid/add",
+                    type: "post",
+                    success: function (msg) {
+                        if (msg.isSuccess == false) {
+                            jqxAlert(msg.respnseInfo);
+                        }
+                        $("#netgrid").jqxDataTable('updateBoundData');
+                        $("#editbox").jqxWindow("close")
+                    }
+                })
+            });
         }
+
+        //编辑
         function edit(row) {
             if (row == null) {
                 jqxAlert('请选择一条记录！')
             } else {
-                jqxAlert(row.id)
+                //弹出框
+                jqxWindow("#editbox", "编辑", 280, 250);
+
+                //美化input button
+                $("#editbox button").jqxButton();
+                $("#editbox input:text").jqxInput({ height: 25 });
+                // $("#editbox #date").jqxDateTimeInput({ formatString: 'dddd-MMMM-yyyy' });
+
+                //取消事件
+                $('#cancel').unbind();
+                $('#cancel').on('click', function (e) {
+                    $("#editbox").jqxWindow("close")
+                });
+
+                //格日化日期
+                row.date = $.convert.toDate(row.date, "yyyy-MM-dd")
+                //通过JSON自动填充表单，也可以自已实现
+                $("#frmtable").formFill({ data: row })
+
+                //确定事件
+                $('#save').unbind();
+                $('#save').on('click', function (e) {
+                    $("#frmtable").ajaxSubmit({
+                        url: "/grid/edit",
+                        type: "put",
+                        success: function (msg) {
+                            if (msg.isSuccess == false) {
+                                jqxAlert(msg.respnseInfo);
+                            }
+                            $("#netgrid").jqxDataTable('updateBoundData');
+                            $("#editbox").jqxWindow("close")
+                        }
+                    })
+                });
+            }
+        }
+
+        //删除
+        function del(row) {
+            if (row == null) {
+                jqxAlert('请选择一条记录！')
+            } else {
+                jqxConfirm(function () {
+                    $.ajax({
+                        type: "delete",
+                        url: "/Grid/Del",
+                        data: { id: row.id },
+                        dataType: "json",
+                        success: function (msg) {
+                            if (msg.isSuccess == false) {
+                                jqxAlert(msg.respnseInfo);
+                            }
+                            $("#netgrid").jqxDataTable('updateBoundData');
+                        }, error: function (msg) {
+                            console.log(msg);
+                        }
+                    })
+                }, "您确定要删除吗？")
+
             }
         }
     </script>
-    <script>
-                @Html.Raw(grid)
-    </script>
+    @Html.Raw(Model)
 }
-<div id="jqxgrid">
-</div>
 <div id="netgrid">
+</div>
+<div id="editbox" class="hide">
+    <div class="savetable">
+        <form id="frmtable">
+        <table style="table-layout: fixed; border-style: none;">
+            <tr>
+                <td align="right">
+                    名称:
+                </td>
+                <td align="left">
+                    <input id="id" name="id" type="hidden" value="0" />
+                    <input id="name" name="name" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    产品名:
+                </td>
+                <td align="left">
+                    <input id="productname" name="productname" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    数量:
+                </td>
+                <td align="left">
+                    <input id="quantity" name="quantity" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    时间:
+                </td>
+                <td align="left">
+                    <input id="date" class="Wdate" onclick="WdatePicker()" name="date" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <br />
+                    <button id="save" type="button">
+                        保存</button>
+                    <button style="margin-left: 5px;" type="button" id="cancel">
+                        取消</button>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
 </div>

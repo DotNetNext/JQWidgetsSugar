@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\lib\SqlSugar.dll</HintPath>
     </Reference>
+    <Reference Include="SyntacticSugar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\lib\SyntacticSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -84,6 +88,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BuilderClass.aspx" />
+    <Content Include="Content\jquery-validation-1.13.1\dist\additional-methods.js" />
+    <Content Include="Content\jquery-validation-1.13.1\dist\additional-methods.min.js" />
+    <Content Include="Content\jquery-validation-1.13.1\dist\jquery.validate.js" />
+    <Content Include="Content\jquery-validation-1.13.1\dist\jquery.validate.min.js" />
+    <Content Include="Content\jquery-validation-1.13.1\error.png" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery-1.11.1.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery-1.6.4.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery-1.7.2.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery-1.8.3.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery-1.9.1.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery.form.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery.mockjax.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\jquery.simulate.js" />
+    <Content Include="Content\jquery-validation-1.13.1\lib\require.js" />
+    <Content Include="Content\jquery-validation-1.13.1\validation.sugar.css" />
+    <Content Include="Content\jquery-validation-1.13.1\validation.sugar.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\images\about-26.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\images\add.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\images\administrator.png" />
@@ -722,10 +743,12 @@
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\bootstrap.min.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\demos.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\documentation.js" />
+    <Content Include="Content\jqwidgets-ver3.8.1\scripts\ejq.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\format.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\jquery-1.10.2.min.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\jquery-1.11.1.min.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\jquery-2.0.2.min.js" />
+    <Content Include="Content\jqwidgets-ver3.8.1\scripts\jquery-form.min.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\jquery.mobile-1.4.3.min.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\json2.js" />
     <Content Include="Content\jqwidgets-ver3.8.1\scripts\knockout-2.2.1.js" />
@@ -743,17 +766,31 @@
     <Content Include="Content\jqwidgets-ver3.8.1\styles\widget_icons.png" />
     <Content Include="Content\lib\SqlSugar.dll" />
     <Content Include="Content\lib\SqlSugar.pdb" />
+    <Content Include="Content\My97DatePickerBeta\demo.htm" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\calendar.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\lang\en.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\WdatePicker.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\My97DatePickerBeta\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.5.1.js" />
-    <Content Include="Scripts\jquery-1.5.1.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.11.js" />
-    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\modernizr-1.7.js" />
-    <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -761,16 +798,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
@@ -804,8 +831,6 @@
     <None Include="Content\jqwidgets-ver3.8.1\scripts\jquery.mobile-1.4.3.min.map" />
     <Content Include="Views\Grid\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Grid\Index2.cshtml" />
-    <Content Include="Views\Grid\ViewPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
@@ -841,7 +866,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>11737</DevelopmentServerPort>
+          <DevelopmentServerPort>61820</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

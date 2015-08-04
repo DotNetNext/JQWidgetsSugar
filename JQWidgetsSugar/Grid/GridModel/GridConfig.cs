@@ -19,10 +19,13 @@ namespace JQWidgetsSugar
         public bool pageable = true;
         public int pagerButtonsCount = 10;
         public bool showToolbar = true;
+        public bool columnsResize = true;
+        public bool altRows = false;
         public int toolbarHeight = 35;
         public string renderToolbar { get; set; }
         public bool serverProcessing = true;
         public List<GridColumn> columns { get; set; }
+        public List<ColumnGroups> columnGroups { get; set; }
         [ScriptIgnoreAttribute()]
         public List<GridButton> gridbuttons = new List<GridButton>();
     }

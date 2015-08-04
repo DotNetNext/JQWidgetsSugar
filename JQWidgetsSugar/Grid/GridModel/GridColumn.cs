@@ -14,14 +14,23 @@ namespace JQWidgetsSugar
         public string cellsalign { get; set; }
         public string cellsformat { get; set; }
         public string datatype { get; set; }
+        public string columngroup { get; set; }
+    }
+    public class ColumnGroups
+    {
+        public string text { get; set; }
+        public string align { get; set; }
+        public string name { get; set; }
+        public string parentGroup { get; set; }
     }
 
-    public class AlignType {
+    public class AlignType
+    {
         public const string left = "left";
         public const string right = "right";
         public const string center = "center";
     }
-       
+
     public class Datatype
     {
         public const string datastring = "string";

@@ -2,4 +2,3 @@ D:\工作\NetJQWidgets\Models\bin\Debug\Models.dll
 D:\工作\NetJQWidgets\Models\bin\Debug\Models.pdb
 D:\工作\NetJQWidgets\Models\obj\Debug\Models.dll
 D:\工作\NetJQWidgets\Models\obj\Debug\Models.pdb
-D:\工作\NetJQWidgets\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
