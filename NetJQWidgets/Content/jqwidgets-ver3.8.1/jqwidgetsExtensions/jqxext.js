@@ -61,7 +61,11 @@ function jqxConfirm(okFun, msg, title) {
 
 function jqxWindow(selector, title, width, height) {
     $(selector).show();
-    $(selector).jqxWindow({ width: width, height: height, isModal: true, modalOpacity: 0.3 });
+    if ($(selector).find(".jqx-window-content").size() > 0) {
+        $(selector).jqxWindow("open");
+    } else {
+        $(selector).jqxWindow({ width: width, height: height, isModal: true, modalOpacity: 0.3 });
+    }
     $(selector).jqxWindow('setTitle', title);
 }
 
