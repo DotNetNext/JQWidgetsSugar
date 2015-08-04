@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link href="/Content/jqwidgets-ver3.8.1/jqwidgets/styles/jqx.base.css" rel="stylesheet"
+        type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/Content/jqwidgets-ver3.8.1/jqwidgets/jqx-all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var source =
+{ "datafields": [{ "name": "id", "type": "int" }, { "name": "date", "type": "date"}], "datatype": "json", "url": "/Grid/Data", "editUrl": null, "addUrl": null, "deleteUrl": null }
+            var dataAdapter = new $.jqx.dataAdapter(source, {
+                downloadComplete: function (data) {
+                    source.totalrecords = data.TotalRows;
+                }
+            });
+            $("#netgrid").jqxDataTable({ "width": "100%", "source": dataAdapter, "theme": "arctic", "pageSize": 5, "sortable": true, "editable": false, "filterable": true, "pageable": true, "pagerButtonsCount": 10, "showToolbar": true, "toolbarHeight": 35, "serverProcessing": true, "renderToolbar":
+         function (toolBar) {
+
+             var theme = "Arctic";
+             var toTheme = function (className) {
+                 if (theme == "") return className;
+                 return className + " " + className + "-" + theme;
+             }
+             // appends buttons to the status bar.
+             var container = $("<div style='overflow: hidden; position: relative; height: 100%; width: 100%;'></div>");
+             var buttonTemplate = "<div style='float: left; padding: 3px; margin: 2px;'><div style='margin: 4px; width: 16px; height: 16px;'></div></div>";
+             var addbutton = $(buttonTemplate);
+             container.append(addbutton);
+
+             toolBar.append(container)
+
+             addbutton.jqxButton({ cursor: "pointer", enableDefault: false, height: 25, width: 25 });
+             addbutton.find('div:first').addClass(toTheme('jqx-icon-plus'));
+             addbutton.jqxTooltip({ position: 'bottom', content: "jqx-icon-plus" });
+
+
+             var updateButtons = function (action) {
+                 switch (action) {
+                     case "Select":
+                         addbutton.jqxButton({ disabled: false });
+                         break;
+                     case "Unselect":
+
+                         addbutton.jqxButton({ disabled: true });
+                         break;
+                 }
+             }
+
+             var rowIndex = null;
+             $("#netgrid").on('rowSelect', function (event) {
+                 var args = event.args;
+                 rowIndex = args.index;
+                 updateButtons('Select');
+             });
+
+             $("#netgrid").on('rowUnselect', function (event) {
+                 updateButtons('Unselect');
+             });
+             
+             addButton.click(function (event) {
+                 window.location.href = '/';
+             });
+         }, "columns": [{ "width": "auto", "text": "id", "datafield": "id", "filtertype": null, "cellsalign": null, "cellsformat": null, "datatype": "int" }, { "width": "auto", "text": "date", "datafield": "date", "filtertype": null, "cellsalign": "right", "cellsformat": "d", "datatype": "date"}]
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="jqxgrid">
+    </div>
+    <div id="netgrid">
+    </div>
+</body>
+</html>

@@ -36,14 +36,14 @@ namespace JQWidgetsSugar
         }
 
 
-        public static string BindGrid(string gridSelector, GridDataAdapterSource gda, GridTable gt)
+        public static string BindGrid(string gridSelector, GridDataAdapterSource gda, GridConfig gc)
         {
 
             if (gda.datafields == null || gda.datafields.Count == 0)
             {
-                foreach (var it in gt.columns)
+                foreach (var it in gc.columns)
                 {
-                    gda.datafields.Add(new GridDatafield() { type=it.datatype, name=it.datafield });
+                    gda.datafields.Add(new GridDatafield() { type = it.datatype, name = it.datafield });
                 }
             }
 
@@ -58,22 +58,22 @@ namespace JQWidgetsSugar
             });");
             gridHtml.AppendLine();
             gridHtml.AppendFormat(@"$(""{0}"").jqxDataTable(", gridSelector);
-            if (string.IsNullOrEmpty(gt.renderToolbar))
+            if (string.IsNullOrEmpty(gc.renderToolbar))
             {
-                gt.renderToolbar = "${toolbar}";
+                gc.renderToolbar = "${toolbar}";
             }
-            gridHtml.Append(jss.Serialize(gt));
+            gridHtml.Append(jss.Serialize(gc));
             gridHtml.Append(");");
             var reval = gridHtml.ToString();
             reval = reval
-                        .Replace("\"${toolbar}\"", GetToolbar(gridSelector))
+                        .Replace("\"${toolbar}\"", GetToolbar(gridSelector, gc))
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter");
             return string.Format("$(function(){{  {0} }})", reval);
         }
 
-        private static string GetToolbar(string gridSelector)
+        private static string GetToolbar(string gridSelector, GridConfig gc)
         {
-            return @"
+            StringBuilder sb = new StringBuilder(@"
          function (toolBar) {
 
                     var theme = ""Arctic"";
@@ -83,118 +83,60 @@ namespace JQWidgetsSugar
                     }
                     // appends buttons to the status bar.
                     var container = $(""<div style='overflow: hidden; position: relative; height: 100%; width: 100%;'></div>"");
-                    var buttonTemplate = ""<div style='float: left; padding: 3px; margin: 2px;'><div style='margin: 4px; width: 16px; height: 16px;'></div></div>"";
-                    var addButton = $(buttonTemplate);
-                    var editButton = $(buttonTemplate);
-                    var deleteButton = $(buttonTemplate);
-                    var cancelButton = $(buttonTemplate);
-                    var updateButton = $(buttonTemplate);
-                    container.append(addButton);
-                    container.append(editButton);
-                    container.append(deleteButton);
-                    container.append(cancelButton);
-                    container.append(updateButton);
-                    toolBar.append(container);
-                    addButton.jqxButton({ cursor: ""pointer"", enableDefault: false, height: 25, width: 25 });
-                    addButton.find('div:first').addClass(toTheme('jqx-icon-plus'));
-                    addButton.jqxTooltip({ position: 'bottom', content: ""Add"" });
-                    editButton.jqxButton({ cursor: ""pointer"", disabled: true, enableDefault: false, height: 25, width: 25 });
-                    editButton.find('div:first').addClass(toTheme('jqx-icon-edit'));
-                    editButton.jqxTooltip({ position: 'bottom', content: ""Edit"" });
-                    deleteButton.jqxButton({ cursor: ""pointer"", disabled: true, enableDefault: false, height: 25, width: 25 });
-                    deleteButton.find('div:first').addClass(toTheme('jqx-icon-delete'));
-                    deleteButton.jqxTooltip({ position: 'bottom', content: ""Delete"" });
-                    updateButton.jqxButton({ cursor: ""pointer"", disabled: true, enableDefault: false, height: 25, width: 25 });
-                    updateButton.find('div:first').addClass(toTheme('jqx-icon-save'));
-                    updateButton.jqxTooltip({ position: 'bottom', content: ""Save Changes"" });
-                    cancelButton.jqxButton({ cursor: ""pointer"", disabled: true, enableDefault: false, height: 25, width: 25 });
-                    cancelButton.find('div:first').addClass(toTheme('jqx-icon-cancel'));
-                    cancelButton.jqxTooltip({ position: 'bottom', content: ""Cancel"" });
-                    var updateButtons = function (action) {
-                        switch (action) {
-                            case ""Select"":
-                                addButton.jqxButton({ disabled: false });
-                                deleteButton.jqxButton({ disabled: false });
-                                editButton.jqxButton({ disabled: false });
-                                cancelButton.jqxButton({ disabled: true });
-                                updateButton.jqxButton({ disabled: true });
-                                break;
-                            case ""Unselect"":
-                                addButton.jqxButton({ disabled: false });
-                                deleteButton.jqxButton({ disabled: true });
-                                editButton.jqxButton({ disabled: true });
-                                cancelButton.jqxButton({ disabled: true });
-                                updateButton.jqxButton({ disabled: true });
-                                break;
-                            case ""Edit"":
-                                addButton.jqxButton({ disabled: true });
-                                deleteButton.jqxButton({ disabled: true });
-                                editButton.jqxButton({ disabled: true });
-                                cancelButton.jqxButton({ disabled: false });
-                                updateButton.jqxButton({ disabled: false });
-                                break;
-                            case ""End Edit"":
-                                addButton.jqxButton({ disabled: false });
-                                deleteButton.jqxButton({ disabled: false });
-                                editButton.jqxButton({ disabled: false });
-                                cancelButton.jqxButton({ disabled: true });
-                                updateButton.jqxButton({ disabled: true });
-                                break;
-                        }
-                    }
-                    var rowIndex = null;
+                    var buttonTemplate = ""<div style='float: left; padding: 3px; margin: 2px;'><div style='margin: 4px; width: 16px; height: 16px;'></div></div>"";");
+            sb.AppendLine();
+            gc.gridbuttons.ForEach(it =>
+            {
+
+                sb.AppendFormat("var {0} = $(buttonTemplate);", it.name);
+                sb.AppendLine();
+            });
+
+            gc.gridbuttons.ForEach(it =>
+            {
+
+                sb.AppendFormat(" container.append({0});", it.name);
+                sb.AppendLine();
+            });
+            sb.AppendLine();
+            sb.Append("toolBar.append(container)");
+            sb.AppendLine();
+            gc.gridbuttons.ForEach(it =>
+            {
+                sb.AppendFormat(@"
+                    {0}.jqxButton({{ cursor: ""pointer"", enableDefault: false, height: 25, width: 25 }});
+                    {0}.find('div:first').addClass(toTheme('{2}'));
+                    {0}.jqxTooltip({{ position: 'bottom', content: ""{2}"" }});", it.name, it.title, it.icon);
+                sb.AppendLine();
+            });
+         
+            sb.AppendLine();
+            sb.Append(@"
+                    var row = null;
                     $(""" + gridSelector + @""").on('rowSelect', function (event) {
-                        var args = event.args;
-                        rowIndex = args.index;
-                        updateButtons('Select');
-                    });
+                        row= event.args.row;
+                    });");
+            sb.AppendLine();
+            sb.Append(@"
                     $(""" + gridSelector + @""").on('rowUnselect', function (event) {
-                        updateButtons('Unselect');
-                    });
-                    $(""" + gridSelector + @""").on('rowEndEdit', function (event) {
-                        updateButtons('End Edit');
-                    });
-                    $(""" + gridSelector + @""").on('rowBeginEdit', function (event) {
-                        updateButtons('Edit');
-                    });
-                    addButton.click(function (event) {
-                        if (!addButton.jqxButton('disabled')) {
-                            // add new empty row.
-                            $(""" + gridSelector + @""").jqxDataTable('addRow', null, {}, 'first');
-                            // select the first row and clear the selection.
-                            $(""" + gridSelector + @""").jqxDataTable('clearSelection');
-                            $(""" + gridSelector + @""").jqxDataTable('selectRow', 0);
-                            // edit the new row.
-                            $(""" + gridSelector + @""").jqxDataTable('beginRowEdit', 0);
-                            updateButtons('add');
-                      
-                        }
-                    });
-                    cancelButton.click(function (event) {
-                        if (!cancelButton.jqxButton('disabled')) {
-                            // cancel changes.
-                            $(""" + gridSelector + @""").jqxDataTable('endRowEdit', rowIndex, true);
-                        }
-                    });
-                    updateButton.click(function (event) {
-                        if (!updateButton.jqxButton('disabled')) {
-                            // save changes.
-                            $(""" + gridSelector + @""").jqxDataTable('endRowEdit', rowIndex, false);
-                        }
-                    });
-                    editButton.click(function () {
-                        if (!editButton.jqxButton('disabled')) {
-                            $(""" + gridSelector + @""").jqxDataTable('beginRowEdit', rowIndex);
-                            updateButtons('edit');
-                        }
-                    });
-                    deleteButton.click(function () {
-                        if (!deleteButton.jqxButton('disabled')) {
-                            $(""" + gridSelector + @""").jqxDataTable('deleteRow', rowIndex);
-                            updateButtons('delete');
-                        }
-                    });
-}";
+                        row = null;
+                    });");
+            sb.AppendLine();
+            gc.gridbuttons.ForEach(it =>
+            {
+                if (!string.IsNullOrWhiteSpace(it.click))
+                {
+                    sb.AppendLine();
+                    string clickHtml = it.click;
+                    sb.AppendFormat(@"  {1}.click(function (event) {{
+                       {0}(row);
+                    }});", clickHtml,it.name);
+
+                }
+            });
+            sb.AppendLine();
+            sb.Append("}");
+            return sb.ToString();
         }
 
         private static string BuildQuery(System.Collections.Specialized.NameValueCollection query)

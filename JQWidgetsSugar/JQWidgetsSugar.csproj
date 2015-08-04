@@ -48,7 +48,7 @@
     <Compile Include="Grid\GridModel\GridColumn.cs" />
     <Compile Include="Grid\GridModel\GridDataAdapterSource.cs" />
     <Compile Include="Grid\GridModel\GridDatafield.cs" />
-    <Compile Include="Grid\GridModel\GridTable.cs" />
+    <Compile Include="Grid\GridModel\GridConfig.cs" />
     <Compile Include="Grid\JQXGrid.cs" />
     <Compile Include="Grid\JsonResultModel.cs" />
     <Compile Include="Grid\GridModel\GridSearchParams.cs" />

@@ -6,18 +6,39 @@
 @{
     var adp = new GridDataAdapterSource();
     adp.url = "/Grid/Data";
-    var gt = new GridTable();
-    gt.pageSize = 5;
-    gt.columns = new List<GridColumn>(){
-      new GridColumn(){ text="id", datafield="id",datatype=Datatype.dataint },
-      new GridColumn(){ text="date", datafield="date", cellsformat="d",cellsalign="right", datatype=Datatype.datadate
+    var gc = new GridConfig();
+    gc.gridbuttons = new List<GridButton>()
+    {
+       new GridButton(){ click="add", name="addbutton", icon="jqx-icon-plus", title="add"},
+       new GridButton(){ click="edit", name="editbutton", icon="jqx-icon-edit", title="edit"}
+    };
+    gc.pageSize = 5;
+    gc.width = "500";
+    gc.columns = new List<GridColumn>(){
+       new GridColumn(){ text="编号", datafield="id", width="40px", cellsalign=AlignType.center,datatype=Datatype.dataint },
+       new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.center,datatype=Datatype.datastring },
+       new GridColumn(){ text="产品名", datafield="productname", cellsalign=AlignType.center,datatype=Datatype.datastring },
+       new GridColumn(){ text="数量", datafield="quantity" , datatype=Datatype.dataint},
+       new GridColumn(){ text="创建时间", datafield="date", cellsformat="d",cellsalign=AlignType.right, datatype=Datatype.datadate
       }
     };
-    var grid = JQXGrid.BindGrid("#netgrid", adp, gt);
+    var grid = JQXGrid.BindGrid("#netgrid", adp, gc);
 }
 @section head{
     <script type="text/javascript">
-            @Html.Raw(grid)
+        function add(row) {
+            jqxAlert("add")
+        }
+        function edit(row) {
+            if (row == null) {
+                jqxAlert('请选择一条记录！')
+            } else {
+                jqxAlert(row.id)
+            }
+        }
+    </script>
+    <script>
+                @Html.Raw(grid)
     </script>
 }
 <div id="jqxgrid">

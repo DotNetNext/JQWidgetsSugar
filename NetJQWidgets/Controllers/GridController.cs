@@ -26,7 +26,7 @@ namespace NetJQWidgets.Controllers
         {
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
-                var sable = db.Sqlable().Form("GridTable", "g");
+                var sable = db.Sqlable().Form<GridTable>("g").Where("id>0");//查询表的sqlable对象
                 var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars);
                 return Json(model, JsonRequestBehavior.AllowGet);
             }

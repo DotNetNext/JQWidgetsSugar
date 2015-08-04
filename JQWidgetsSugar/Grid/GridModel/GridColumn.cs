@@ -16,6 +16,12 @@ namespace JQWidgetsSugar
         public string datatype { get; set; }
     }
 
+    public class AlignType {
+        public const string left = "left";
+        public const string right = "right";
+        public const string center = "center";
+    }
+       
     public class Datatype
     {
         public const string datastring = "string";
