@@ -56,9 +56,18 @@ namespace NetJQWidgets.Controllers
         {
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
+                string message = string.Empty;
+                var isValid = ValidationSugar.PostValidation("validate_key_grid_index", out message);
                 ActionResultModel<string> model = new ActionResultModel<string>();
-                model.isSuccess = db.Insert(gt) != DBNull.Value;
-                model.respnseInfo = model.isSuccess ? "添加成功" : "添加失败";
+                if (isValid)//后台验证数据完整性
+                {
+                    model.isSuccess = db.Insert(gt) != DBNull.Value;
+                    model.respnseInfo = model.isSuccess ? "添加成功" : "添加失败";
+                }
+                else {
+                    model.isSuccess = false;
+                    model.respnseInfo = message;
+                }
                 return Json(model);
             }
         }
@@ -68,8 +77,17 @@ namespace NetJQWidgets.Controllers
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
                 ActionResultModel<string> model = new ActionResultModel<string>();
-                model.isSuccess = db.Update<GridTable>(gt, it => it.id == gt.id);
-                model.respnseInfo = model.isSuccess ? "编辑成功" : "编辑失败";
+                string message = string.Empty;
+                var isValid = ValidationSugar.PostValidation("validate_key_grid_index", out message);
+                if (isValid)//后台验证数据完整性
+                {
+                    model.isSuccess = db.Update<GridTable>(gt, it => it.id == gt.id);
+                    model.respnseInfo = model.isSuccess ? "编辑成功" : "编辑失败";
+                }
+                else {
+                    model.isSuccess = false;
+                    model.respnseInfo = message;
+                }
                 return Json(model);
             }
         }

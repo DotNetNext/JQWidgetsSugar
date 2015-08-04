@@ -16,7 +16,7 @@
         //添加
         function add(row) {
             //弹出框
-            jqxWindow("#editbox", "添加", 400, "300");
+            jqxWindow("#editbox", "添加", 400, "auto");
 
             //美化 button
             $("#editbox button").jqxButton();
@@ -44,6 +44,8 @@
                             }
                             $("#netgrid").jqxDataTable('updateBoundData');
                             $("#editbox").jqxWindow("close")
+                        }, error: function (msg) {
+                            console.log(msg);
                         }
                     })
                 });
@@ -85,6 +87,8 @@
                                 }
                                 $("#netgrid").jqxDataTable('updateBoundData');
                                 $("#editbox").jqxWindow("close")
+                            }, error: function (msg) {
+                                console.log(msg);
                             }
                         })
                     });
