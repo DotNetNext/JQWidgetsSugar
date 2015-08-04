@@ -35,6 +35,7 @@ namespace NetJQWidgets.Controllers
             };
        
             var grid = JQXGrid.BindGrid("#netgrid", adp, gc);
+            ViewBag.validationBind = ValidationSugar.GetBindScript("validate_key_grid_index");
             return View(grid);
         }
 

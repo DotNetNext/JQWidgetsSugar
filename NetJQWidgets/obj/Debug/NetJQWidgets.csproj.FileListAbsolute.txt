@@ -14,3 +14,4 @@ D:\工作\NetJQWidgets\NetJQWidgets\bin\JQWidgetsSugar.pdb
 D:\工作\NetJQWidgets\NetJQWidgets\bin\Models.pdb
 D:\工作\NetJQWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.csprojResolveAssemblyReference.cache
 D:\工作\NetJQWidgets\NetJQWidgets\bin\SyntacticSugar.pdb
+D:\工作\NetJQWidgets\NetJQWidgets\bin\SyntacticSugar.dll

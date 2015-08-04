@@ -34,6 +34,7 @@ namespace NetJQWidgets
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+            ValidatesManager.Init();
         }
     }
 }

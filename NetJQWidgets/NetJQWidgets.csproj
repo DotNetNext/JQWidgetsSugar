@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValidatesManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -766,6 +767,8 @@
     <Content Include="Content\jqwidgets-ver3.8.1\styles\widget_icons.png" />
     <Content Include="Content\lib\SqlSugar.dll" />
     <Content Include="Content\lib\SqlSugar.pdb" />
+    <Content Include="Content\lib\SyntacticSugar.dll" />
+    <Content Include="Content\lib\SyntacticSugar.pdb" />
     <Content Include="Content\My97DatePickerBeta\demo.htm" />
     <Content Include="Content\My97DatePickerBeta\My97DatePicker\calendar.js" />
     <Content Include="Content\My97DatePickerBeta\My97DatePicker\lang\en.js" />

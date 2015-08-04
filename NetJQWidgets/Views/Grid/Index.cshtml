@@ -16,11 +16,11 @@
         //添加
         function add(row) {
             //弹出框
-            jqxWindow("#editbox", "添加", 280, 250);
+            jqxWindow("#editbox", "添加", 400, "300");
 
-            //美化input button
+            //美化 button
             $("#editbox button").jqxButton();
-            $("#editbox input:text").jqxInput({ height: 25 });
+
 
             //取消事件
             $('#cancel').unbind();
@@ -34,17 +34,19 @@
             $('#save').unbind();
             //确定事件
             $('#save').on('click', function (e) {
-                $("#frmtable").ajaxSubmit({
-                    url: "/grid/add",
-                    type: "post",
-                    success: function (msg) {
-                        if (msg.isSuccess == false) {
-                            jqxAlert(msg.respnseInfo);
+                factory.ajaxSubmit(function () {
+                    $("#frmtable").ajaxSubmit({
+                        url: "/grid/add",
+                        type: "post",
+                        success: function (msg) {
+                            if (msg.isSuccess == false) {
+                                jqxAlert(msg.respnseInfo);
+                            }
+                            $("#netgrid").jqxDataTable('updateBoundData');
+                            $("#editbox").jqxWindow("close")
                         }
-                        $("#netgrid").jqxDataTable('updateBoundData');
-                        $("#editbox").jqxWindow("close")
-                    }
-                })
+                    })
+                });
             });
         }
 
@@ -54,12 +56,10 @@
                 jqxAlert('请选择一条记录！')
             } else {
                 //弹出框
-                jqxWindow("#editbox", "编辑", 280, 250);
+                jqxWindow("#editbox", "编辑", 400, "auto");
 
-                //美化input button
+                //美化 button
                 $("#editbox button").jqxButton();
-                $("#editbox input:text").jqxInput({ height: 25 });
-                // $("#editbox #date").jqxDateTimeInput({ formatString: 'dddd-MMMM-yyyy' });
 
                 //取消事件
                 $('#cancel').unbind();
@@ -75,17 +75,19 @@
                 //确定事件
                 $('#save').unbind();
                 $('#save').on('click', function (e) {
-                    $("#frmtable").ajaxSubmit({
-                        url: "/grid/edit",
-                        type: "put",
-                        success: function (msg) {
-                            if (msg.isSuccess == false) {
-                                jqxAlert(msg.respnseInfo);
+                    factory.ajaxSubmit(function () {
+                        $("#frmtable").ajaxSubmit({
+                            url: "/grid/edit",
+                            type: "put",
+                            success: function (msg) {
+                                if (msg.isSuccess == false) {
+                                    jqxAlert(msg.respnseInfo);
+                                }
+                                $("#netgrid").jqxDataTable('updateBoundData');
+                                $("#editbox").jqxWindow("close")
                             }
-                            $("#netgrid").jqxDataTable('updateBoundData');
-                            $("#editbox").jqxWindow("close")
-                        }
-                    })
+                        })
+                    });
                 });
             }
         }
@@ -114,6 +116,13 @@
 
             }
         }
+
+        //绑定验证
+        $(function () {
+            window.factory = new validateFactory($("form"), "<img src=\"/Content/jquery-validation-1.13.1/error.png\" />");
+            factory.init();
+
+        });
     </script>
     @Html.Raw(Model)
 }
@@ -121,7 +130,7 @@
 </div>
 <div id="editbox" class="hide">
     <div class="savetable">
-        <form id="frmtable">
+        <form id="frmtable" class="form">
         <table style="table-layout: fixed; border-style: none;">
             <tr>
                 <td align="right">
@@ -157,7 +166,9 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" align="right">
+                <td>
+                </td>
+                <td>
                     <br />
                     <button id="save" type="button">
                         保存</button>
@@ -169,3 +180,4 @@
         </form>
     </div>
 </div>
+@Html.Raw(ViewBag.validationBind)
