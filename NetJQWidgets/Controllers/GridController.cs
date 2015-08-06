@@ -102,7 +102,7 @@ namespace NetJQWidgets.Controllers
                     pars.sortorder = "desc";
                 }
                 Sqlable sable = db.Sqlable().Form<GridTable>("g");//查询表的sqlable对象
-                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars);//根据grid的参数自动查询
+                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars,"*");//根据grid的参数自动查询
                 return Json(model, JsonRequestBehavior.AllowGet);
             }
         }
