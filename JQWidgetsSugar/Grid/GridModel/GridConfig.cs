@@ -16,6 +16,7 @@ namespace JQWidgetsSugar
         public bool sortable = true;
         public bool editable = false;
         public bool filterable = true;
+        public string filterMode = FileModel.defaultValue;
         public bool pageable = true;
         public int pagerButtonsCount = 10;
         public bool showToolbar = true;

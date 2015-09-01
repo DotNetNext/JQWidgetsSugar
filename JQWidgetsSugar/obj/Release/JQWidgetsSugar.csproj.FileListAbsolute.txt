@@ -1,0 +1,7 @@
+D:\工作\NetJQWidgets\JQWidgetsSugar\bin\Release\JQWidgetsSugar.dll
+D:\工作\NetJQWidgets\JQWidgetsSugar\bin\Release\JQWidgetsSugar.pdb
+D:\工作\NetJQWidgets\JQWidgetsSugar\bin\Release\SqlSugar.dll
+D:\工作\NetJQWidgets\JQWidgetsSugar\bin\Release\SqlSugar.pdb
+D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.csprojResolveAssemblyReference.cache
+D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
+D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb

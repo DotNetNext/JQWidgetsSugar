@@ -25,6 +25,7 @@ namespace NetJQWidgets.Controllers
             };
             gc.pageSize = 20;
             gc.width = "80%";
+            gc.filterMode = FileModel.advanced;
             gc.columns = new List<GridColumn>(){
                new GridColumn(){ text="编号", datafield="id", width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
                new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring },

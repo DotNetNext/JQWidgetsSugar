@@ -40,4 +40,11 @@ namespace JQWidgetsSugar
         public const string datafloat = "float";
         public const string databool = "bool";
     }
+
+    public class FileModel
+    {
+        public const string defaultValue = "default";
+        public const string simple = "simple";
+        public const string advanced = "advanced";
+    }
 }
