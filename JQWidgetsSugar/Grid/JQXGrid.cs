@@ -67,7 +67,8 @@ namespace JQWidgetsSugar
             var reval = gridHtml.ToString();
             reval = reval
                         .Replace("\"${toolbar}\"", GetToolbar(gridSelector, gc))
-                        .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter");
+                        .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter")
+                        .Replace("\"${localization}\"", "jqxLocalization");
             reval= string.Format("$(function(){{  {0} }})", reval);
             reval = ("<script>\r\n")+reval+("\n\r</script>");
             return reval;

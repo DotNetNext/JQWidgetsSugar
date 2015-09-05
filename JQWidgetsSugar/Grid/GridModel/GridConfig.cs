@@ -23,6 +23,7 @@ namespace JQWidgetsSugar
         public bool columnsResize = true;
         public bool altRows = false;
         public int toolbarHeight = 35;
+        public string localization = "${localization}";
         public string renderToolbar { get; set; }
         public bool serverProcessing = true;
         public List<GridColumn> columns { get; set; }

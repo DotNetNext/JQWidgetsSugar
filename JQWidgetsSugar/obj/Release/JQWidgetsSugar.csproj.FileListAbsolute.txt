@@ -5,3 +5,9 @@ D:\工作\NetJQWidgets\JQWidgetsSugar\bin\Release\SqlSugar.pdb
 D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.csprojResolveAssemblyReference.cache
 D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
 D:\工作\NetJQWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\JQWidgetsSugar.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\JQWidgetsSugar.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\SqlSugar.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\SqlSugar.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb

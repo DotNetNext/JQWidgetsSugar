@@ -5,3 +5,10 @@ D:\工作\NetJQWidgets\DAL\bin\Release\SqlSugar.pdb
 D:\工作\NetJQWidgets\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
 D:\工作\NetJQWidgets\DAL\obj\Release\DAL.dll
 D:\工作\NetJQWidgets\DAL\obj\Release\DAL.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\DAL.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\DAL.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSugar.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSugar.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.pdb
