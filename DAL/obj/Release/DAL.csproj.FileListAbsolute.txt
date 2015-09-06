@@ -12,3 +12,10 @@ F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSugar.pdb
 F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
 F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.dll
 F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.pdb
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\DAL.dll
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\DAL.pdb
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSugar.dll
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSugar.pdb
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.dll
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.pdb

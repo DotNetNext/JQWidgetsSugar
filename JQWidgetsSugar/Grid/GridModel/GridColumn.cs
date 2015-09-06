@@ -15,6 +15,7 @@ namespace JQWidgetsSugar
         public string cellsformat { get; set; }
         public string datatype { get; set; }
         public string columngroup { get; set; }
+        public bool pinned = false;
     }
     public class ColumnGroups
     {

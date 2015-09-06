@@ -2,3 +2,7 @@ D:\工作\NetJQWidgets\Models\bin\Release\Models.dll
 D:\工作\NetJQWidgets\Models\bin\Release\Models.pdb
 D:\工作\NetJQWidgets\Models\obj\Release\Models.dll
 D:\工作\NetJQWidgets\Models\obj\Release\Models.pdb
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Models.dll
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Models.pdb
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.dll
+C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.pdb
