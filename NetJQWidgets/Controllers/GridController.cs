@@ -28,7 +28,6 @@ namespace NetJQWidgets.Controllers
             gc.filterMode = FileModel.advanced;
             gc.selectionMode = SelectionMode.multipleRows;
             gc.columns = new List<GridColumn>(){
-               new GridColumn(){ text="", datafield="checkbox",renderer="rendererFunc",  rendered="renderedFunc",cellsRenderer="cellsRendererFunc",sortable=false},
                new GridColumn(){ text="编号", datafield="id", hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
                new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },
                new GridColumn(){ text="产品名", datafield="productname", cellsalign=AlignType.left,datatype=Datatype.datastring },
@@ -36,7 +35,7 @@ namespace NetJQWidgets.Controllers
                new GridColumn(){ text="创建时间", datafield="date", cellsformat="yyyy-MM-dd",cellsalign=AlignType.right, datatype=Datatype.datadate 
               }
             };
-       
+            JQXGrid.PublicMehtod.ColumnsPrependCheckbox(gc.columns);
             var grid = JQXGrid.BindGrid("#netgrid", adp, gc);
             ViewBag.validationBind = ValidationSugar.GetBindScript("validate_key_grid_index");
             return View(grid);

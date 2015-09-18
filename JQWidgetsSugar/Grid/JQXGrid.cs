@@ -12,7 +12,7 @@ namespace JQWidgetsSugar
     public class JQXGrid
     {
         private static System.Web.Script.Serialization.JavaScriptSerializer jss = new System.Web.Script.Serialization.JavaScriptSerializer();
-        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars,string selectFields="*") where T : class
+        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars, string selectFields = "*") where T : class
         {
             var query = System.Web.HttpContext.Current.Request.QueryString;
             Type type = typeof(T);
@@ -71,10 +71,10 @@ namespace JQWidgetsSugar
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter")
                         .Replace("\"${localization}\"", "jqxLocalization");
             reval += GetCheckFunc(gridSelector);
-            reval= string.Format("$(function(){{  {0} }})", reval);
-            reval = ("<script>\r\n")+reval+("\n\r</script>");
+            reval = string.Format("$(function(){{  {0} }})", reval);
+            reval = ("<script>\r\n") + reval + ("\n\r</script>");
 
-            reval = FuncAction(reval,@"""cellsRenderer""\:""(.*?)""");
+            reval = FuncAction(reval, @"""cellsRenderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""renderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""rendered""\:""(.*?)""");
             return reval;
@@ -115,7 +115,7 @@ function renderedFunc(element,x,x1,x2) {
             return reval;
         }
 
-        private static string FuncAction(string reval,string regex)
+        private static string FuncAction(string reval, string regex)
         {
             var cellsRendererMatchs = Regex.Matches(reval, regex);
             if (cellsRendererMatchs.Count > 0)
@@ -128,7 +128,7 @@ function renderedFunc(element,x,x1,x2) {
                         var replaceKey = Guid.NewGuid().ToString();
                         reval = reval.Replace(cellsRenderer, replaceKey);
 
-                        var cellsRendererValue =m.Value.Split(':').Last();
+                        var cellsRendererValue = m.Value.Split(':').Last();
                         string newcellsRenderer = cellsRenderer.Replace(cellsRendererValue, cellsRendererValue.TrimEnd('"').TrimStart('"'));
                         reval = reval.Replace(replaceKey, newcellsRenderer);
                     }
@@ -175,7 +175,7 @@ function renderedFunc(element,x,x1,x2) {
                     {0}.jqxTooltip({{ position: 'bottom', content: ""{1}"" }});", it.name, it.title, it.icon);
                 sb.AppendLine();
             });
-         
+
             sb.AppendLine();
             sb.Append(@"
                     var row = null;
@@ -196,7 +196,7 @@ function renderedFunc(element,x,x1,x2) {
                     string clickHtml = it.click;
                     sb.AppendFormat(@"  {1}.click(function (event) {{
                        {0}(row);
-                    }});", clickHtml,it.name);
+                    }});", clickHtml, it.name);
 
                 }
             });
@@ -300,5 +300,15 @@ function renderedFunc(element,x,x1,x2) {
             }
             return "";
         }
+
+        public static PublicMehtod PublicMehtod
+        {
+            get
+            {
+                return new PublicMehtod();
+            }
+        }
+
     }
+
 }
