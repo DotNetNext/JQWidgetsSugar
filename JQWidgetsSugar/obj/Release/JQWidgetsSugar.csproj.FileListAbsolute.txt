@@ -15,7 +15,6 @@ C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Re
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\JQWidgetsSugar.pdb
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\SqlSugar.dll
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\SqlSugar.pdb
-C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.csprojResolveAssemblyReference.cache
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb
 E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Release\JQWidgetsSugar.dll
