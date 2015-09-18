@@ -84,6 +84,31 @@
             自定义表头后
             </summary>
         </member>
+        <member name="T:JQWidgetsSugar.ColumnGroups">
+            <summary>
+            列分组
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.AlignType">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.Datatype">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.FilterModel">
+            <summary>
+            过滤类型
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.SelectionMode">
+            <summary>
+            选择类型
+            </summary>
+        </member>
         <member name="T:JQWidgetsSugar.JQXGrid">
             <summary>
             jqxgrid通用类

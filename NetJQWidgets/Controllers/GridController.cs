@@ -23,10 +23,12 @@ namespace NetJQWidgets.Controllers
                new GridButton(){ click="edit", name="editbutton", icon="jqx-icon-edit", title="编辑"},
                new GridButton(){ click="del", name="delbutton", icon="jqx-icon-delete", title="删除"}
             };
+            gc.initRowDetails = "initRowDetails";
             gc.pageSize = 20;
             gc.width = "80%";
-            gc.filterMode = FileModel.advanced;
+            gc.filterMode = FilterModel.advanced;
             gc.selectionMode = SelectionMode.multipleRows;
+            gc.rowDetails = true;
             gc.columns = new List<GridColumn>(){
                new GridColumn(){ text="编号", datafield="id", hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
                new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },
@@ -35,6 +37,11 @@ namespace NetJQWidgets.Controllers
                new GridColumn(){ text="创建时间", datafield="date", cellsformat="yyyy-MM-dd",cellsalign=AlignType.right, datatype=Datatype.datadate 
               }
             };
+
+
+      
+
+
             JQXGrid.PublicMehtod.ColumnsPrependCheckbox(gc.columns);
             var grid = JQXGrid.BindGrid("#netgrid", adp, gc);
             ViewBag.validationBind = ValidationSugar.GetBindScript("validate_key_grid_index");
@@ -116,6 +123,21 @@ namespace NetJQWidgets.Controllers
                 }
                 Sqlable sable = db.Sqlable().Form<GridTable>("g");//查询表的sqlable对象
                 var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars,"*");//根据grid的参数自动查询
+                return Json(model, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [OutputCache(Duration = 0)]
+        public JsonResult DataChild(GridSearchParams pars)
+        {
+            using (SqlSugarClient db = SugarDao.GetInstance())
+            {
+                if (pars.sortdatafield == null)
+                { //默认按id降序
+                    pars.sortdatafield = "id";
+                    pars.sortorder = "desc";
+                }
+                Sqlable sable = db.Sqlable().Form<GridTable>("g");//查询表的sqlable对象
+                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars, "*");//根据grid的参数自动查询
                 return Json(model, JsonRequestBehavior.AllowGet);
             }
         }

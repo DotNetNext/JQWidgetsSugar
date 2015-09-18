@@ -67,3 +67,4 @@ E:\Code\Git\jqWidgets\NetJQWidgets\obj\Release\NetJQWidgets.csprojResolveAssembl
 E:\Code\Git\jqWidgets\NetJQWidgets\obj\Release\NetJQWidgets.dll
 E:\Code\Git\jqWidgets\NetJQWidgets\obj\Release\NetJQWidgets.pdb
 E:\Code\Git\jqWidgets\NetJQWidgets\bin\JQWidgetsSugar.xml
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\NetJQWidgets\bin\JQWidgetsSugar.xml

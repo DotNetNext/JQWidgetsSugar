@@ -73,6 +73,10 @@ namespace JQWidgetsSugar
         /// </summary>
         public bool filterable = true;
     }
+
+    /// <summary>
+    /// 列分组
+    /// </summary>
     public class ColumnGroups
     {
         public string text { get; set; }
@@ -81,13 +85,18 @@ namespace JQWidgetsSugar
         public string parentGroup { get; set; }
     }
 
+    /// <summary>
+    /// 对齐方式
+    /// </summary>
     public class AlignType
     {
         public const string left = "left";
         public const string right = "right";
         public const string center = "center";
     }
-
+    /// <summary>
+    /// 数据类型
+    /// </summary>
     public class Datatype
     {
         public const string datastring = "string";
@@ -97,14 +106,18 @@ namespace JQWidgetsSugar
         public const string datafloat = "float";
         public const string databool = "bool";
     }
-
-    public class FileModel
+    /// <summary>
+    /// 过滤类型
+    /// </summary>
+    public class FilterModel
     {
         public const string defaultValue = "default";
         public const string simple = "simple";
         public const string advanced = "advanced";
     }
-
+    /// <summary>
+    /// 选择类型
+    /// </summary>
     public class SelectionMode {
         public const string singleRow = "singleRow";
         public const string multipleRows = "multipleRows";

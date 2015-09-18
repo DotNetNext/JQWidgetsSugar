@@ -77,6 +77,7 @@ namespace JQWidgetsSugar
             reval = FuncAction(reval, @"""cellsRenderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""renderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""rendered""\:""(.*?)""");
+            reval = FuncAction(reval, @"""initRowDetails""\:""(.*?)""");
             return reval;
         }
 
@@ -92,7 +93,7 @@ function rendererFunc() {
     checkBox += ""</div>"";
     return checkBox;
 }
-function renderedFunc(element,x,x1,x2) {
+function renderedFunc(element) {
     var grid = $(""" + gridSelector + @""");
     element.jqxCheckBox();
     element.on('change', function (event) {
