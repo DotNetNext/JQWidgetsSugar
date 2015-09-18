@@ -25,4 +25,3 @@ E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
 E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb
 E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Release\JQWidgetsSugar.XML
 F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\bin\Release\JQWidgetsSugar.XML
-F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\JQWidgetsSugar\obj\Release\JQWidgetsSugar.csprojResolveAssemblyReference.cache

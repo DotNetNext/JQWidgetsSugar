@@ -39,7 +39,7 @@ namespace JQWidgetsSugar
             var rows = sable.SelectToPageList<T>(selectFields, orderBy, pars.pagenum + 1, pars.pagesize,whereObj);
             var result = new JsonResultModel<T>()
             {
-                TotalRows = sable.Count(),
+                TotalRows = sable.Count(whereObj),
                 Rows = rows
             };
             return result;
