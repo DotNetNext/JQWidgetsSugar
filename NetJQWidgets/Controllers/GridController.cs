@@ -26,9 +26,11 @@ namespace NetJQWidgets.Controllers
             gc.pageSize = 20;
             gc.width = "80%";
             gc.filterMode = FileModel.advanced;
+            gc.selectionMode = SelectionMode.multipleRows;
             gc.columns = new List<GridColumn>(){
-               new GridColumn(){ text="编号", datafield="id", width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
-               new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring },
+               new GridColumn(){ text="", datafield="checkbox",renderer="rendererFunc",  rendered="renderedFunc",cellsRenderer="cellsRendererFunc",sortable=false},
+               new GridColumn(){ text="编号", datafield="id", hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
+               new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },
                new GridColumn(){ text="产品名", datafield="productname", cellsalign=AlignType.left,datatype=Datatype.datastring },
                new GridColumn(){ text="数量", datafield="quantity", cellsalign=AlignType.right , datatype=Datatype.dataint },
                new GridColumn(){ text="创建时间", datafield="date", cellsformat="yyyy-MM-dd",cellsalign=AlignType.right, datatype=Datatype.datadate 
@@ -51,7 +53,18 @@ namespace NetJQWidgets.Controllers
                 return Json(model);
             }
         }
-
+        [HttpPost]
+        public JsonResult Del2(string [] ids)
+        {
+            using (SqlSugarClient db = SugarDao.GetInstance())
+            {
+                ActionResultModel<string> model = new ActionResultModel<string>();
+                model.isSuccess = db.Delete<GridTable>(ids);
+                model.respnseInfo = model.isSuccess ? "删除成功" : "删除失败";
+                return Json(model);
+            }
+            return null;
+        }
         [HttpPost]
         public JsonResult Add(GridTable gt)
         {

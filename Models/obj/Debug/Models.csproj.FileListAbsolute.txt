@@ -2,3 +2,7 @@ D:\工作\NetJQWidgets\Models\bin\Debug\Models.dll
 D:\工作\NetJQWidgets\Models\bin\Debug\Models.pdb
 D:\工作\NetJQWidgets\Models\obj\Debug\Models.dll
 D:\工作\NetJQWidgets\Models\obj\Debug\Models.pdb
+E:\Code\Git\jqWidgets\Models\bin\Debug\Models.dll
+E:\Code\Git\jqWidgets\Models\bin\Debug\Models.pdb
+E:\Code\Git\jqWidgets\Models\obj\Debug\Models.dll
+E:\Code\Git\jqWidgets\Models\obj\Debug\Models.pdb

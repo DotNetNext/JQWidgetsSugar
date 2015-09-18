@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SqlSugar;
+using System.Text.RegularExpressions;
 namespace JQWidgetsSugar
 {
     /// <summary>
@@ -69,8 +70,70 @@ namespace JQWidgetsSugar
                         .Replace("\"${toolbar}\"", GetToolbar(gridSelector, gc))
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter")
                         .Replace("\"${localization}\"", "jqxLocalization");
+            reval += GetCheckFunc(gridSelector);
             reval= string.Format("$(function(){{  {0} }})", reval);
             reval = ("<script>\r\n")+reval+("\n\r</script>");
+
+            reval = FuncAction(reval,@"""cellsRenderer""\:""(.*?)""");
+            reval = FuncAction(reval, @"""renderer""\:""(.*?)""");
+            reval = FuncAction(reval, @"""rendered""\:""(.*?)""");
+            return reval;
+        }
+
+        private static string GetCheckFunc(string gridSelector)
+        {
+            string reval = @"
+function cellsRendererFunc(row, column, value, rowData) {
+    return ""<input class=\""jqx_datatable_checkbox\"" index=\"""" + row + ""\"" type=\""checkbox\""  style=\""margin:auto\"" />"";
+}
+ 
+function rendererFunc() {
+    var checkBox = ""<div id='jqx_datatable_checkbox_all' class='jqx_datatable_checkbox_all' style='z-index: 999; margin-left:2px ;margin-top: 7px;'>"";
+    checkBox += ""</div>"";
+    return checkBox;
+}
+function renderedFunc(element,x,x1,x2) {
+    var grid = $(""" + gridSelector + @""");
+    element.jqxCheckBox();
+    element.on('change', function (event) {
+        var checked = element.jqxCheckBox('checked');
+
+        if (checked) {
+            var rows = grid.jqxDataTable('getRows');
+            for (var i = 0; i < rows.length; i++) {
+                grid.jqxDataTable('selectRow', i);
+                grid.find("".jqx_datatable_checkbox"").attr(""checked"", ""checked"")
+            }
+        } else {
+            grid.jqxDataTable('clearSelection');
+            grid.find("".jqx_datatable_checkbox"").removeAttr(""checked"", ""checked"")
+        }
+    });
+    return true;
+}
+";
+            return reval;
+        }
+
+        private static string FuncAction(string reval,string regex)
+        {
+            var cellsRendererMatchs = Regex.Matches(reval, regex);
+            if (cellsRendererMatchs.Count > 0)
+            {
+                foreach (Match m in cellsRendererMatchs)
+                {
+                    string cellsRenderer = m.Value;
+                    if (cellsRenderer != null && cellsRenderer != "")
+                    {
+                        var replaceKey = Guid.NewGuid().ToString();
+                        reval = reval.Replace(cellsRenderer, replaceKey);
+
+                        var cellsRendererValue =m.Value.Split(':').Last();
+                        string newcellsRenderer = cellsRenderer.Replace(cellsRendererValue, cellsRendererValue.TrimEnd('"').TrimStart('"'));
+                        reval = reval.Replace(replaceKey, newcellsRenderer);
+                    }
+                }
+            }
             return reval;
         }
 

@@ -12,6 +12,12 @@
         type="text/css" />
     <script src="/Content/jquery-validation-1.13.1/validation.sugar.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function callback1() {
+
+        }
+        function namefun() {
+            return "namefun";
+        }
 
         //添加
         function add(row) {
@@ -25,14 +31,24 @@
 
         //删除
         function del(row) {
-            if (row == null) {
-                jqxAlert('请选择一条记录！')
-            } else {
+                var grid = $("#netgrid");
+                selection = [];
+                grid.find(".jqx_datatable_checkbox:checked").each(function () {
+                    var th = $(this);
+                    if (th.is(":checked")) {
+                        var index = th.attr("index");
+                        var data = grid.jqxDataTable('getRows')[index];
+                        selection.push(data.id);
+                    }
+                })
+                if (selection.length == 0) {
+                    jqxAlert('请选择一条记录！')
+                    return;
+                }
                 jqxDelete({ gridSelector: "#netgrid",
-                    url: "/Grid/Del",
-                    data: { id: row.id }
+                    url: "/Grid/Del2",
+                    data: { ids: selection }
                 });
-            }
         }
 
         function save(row, isAdd) {
@@ -44,7 +60,7 @@
                 }
             }
             //弹出框
-            jqxWindow("#editbox", isAdd?"添加":"编辑", 400, "auto");
+            jqxWindow("#editbox", isAdd ? "添加" : "编辑", 400, "auto");
 
             //美化 button
             $("#editbox button").jqxButton();
@@ -94,8 +110,8 @@
         $(function () {
             window.factory = new validateFactory($("form"), "<img src=\"/Content/jquery-validation-1.13.1/error.png\" />");
             factory.init();
-
-        });
+            $("#netgrid").jqxDataTable('selectRow', 2);
+        })
     </script>
     @Html.Raw(Model)
 }

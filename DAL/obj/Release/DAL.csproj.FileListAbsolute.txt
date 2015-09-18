@@ -19,3 +19,9 @@ C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\bin\Release\SqlSu
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.dll
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\DAL\obj\Release\DAL.pdb
+E:\Code\Git\jqWidgets\DAL\bin\Release\DAL.dll
+E:\Code\Git\jqWidgets\DAL\bin\Release\DAL.pdb
+E:\Code\Git\jqWidgets\DAL\bin\Release\SqlSugar.dll
+E:\Code\Git\jqWidgets\DAL\bin\Release\SqlSugar.pdb
+E:\Code\Git\jqWidgets\DAL\obj\Release\DAL.dll
+E:\Code\Git\jqWidgets\DAL\obj\Release\DAL.pdb

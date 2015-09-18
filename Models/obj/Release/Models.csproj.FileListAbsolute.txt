@@ -6,3 +6,7 @@ C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Mo
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Models.pdb
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.dll
 C:\Users\jailall.sun\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.pdb
+E:\Code\Git\jqWidgets\Models\bin\Release\Models.dll
+E:\Code\Git\jqWidgets\Models\bin\Release\Models.pdb
+E:\Code\Git\jqWidgets\Models\obj\Release\Models.dll
+E:\Code\Git\jqWidgets\Models\obj\Release\Models.pdb

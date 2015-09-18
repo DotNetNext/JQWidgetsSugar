@@ -79,14 +79,18 @@ function jqxDelete(options) {
     var data = options.data;
     jqxConfirm(function () {
         $.ajax({
-            type: "delete",
+            type: "post",
             url: url,
             data: data,
+            traditional: true,
             dataType: "json",
             success: function (msg) {
                 if (msg.isSuccess == false) {
                     jqxAlert(msg.respnseInfo);
+
                 }
+                if ($(gridSelector).find(".jqx_datatable_checkbox_all").size() > 0)
+                    $(gridSelector).find(".jqx_datatable_checkbox_all").jqxCheckBox('checked', false);
                 $(gridSelector).jqxDataTable('updateBoundData');
             }, error: function (msg) {
                 console.log(msg);
@@ -94,6 +98,7 @@ function jqxDelete(options) {
         })
     }, "您确定要删除吗？")
 }
+
 
 
 
@@ -199,4 +204,8 @@ var jqxLocalization =
     clearstring: "清除",
     todaystring: "今天",
     loadingerrormessage: "The data is still loading and you cannot set a property or call a method. You can do that once the data binding is completed. jqxDataTable raises the 'bindingComplete' event when the binding is completed."
-}; 
+};
+
+
+
+ 

@@ -17,10 +17,12 @@ namespace JQWidgetsSugar
         public bool editable = false;
         public bool filterable = true;
         public string filterMode = FileModel.defaultValue;
+        public string selectionMode = SelectionMode.multipleRows;
         public bool pageable = true;
         public int pagerButtonsCount = 10;
         public bool showToolbar = true;
         public bool columnsResize = true;
+        public string rendered { get; set; }
         public bool altRows = false;
         public int toolbarHeight = 35;
         public string localization = "${localization}";
