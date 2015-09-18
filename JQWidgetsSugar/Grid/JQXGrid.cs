@@ -12,7 +12,16 @@ namespace JQWidgetsSugar
     public class JQXGrid
     {
         private static System.Web.Script.Serialization.JavaScriptSerializer jss = new System.Web.Script.Serialization.JavaScriptSerializer();
-        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars, string selectFields = "*") where T : class
+        /// <summary>
+        ///  获取gridtable数据源
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sable"></param>
+        /// <param name="pars">查询参数</param>
+        /// <param name="selectFields">查询字段</param>
+        /// <param name="whereObj">参数条件</param>
+        /// <returns></returns>
+        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars, string selectFields = "*", object whereObj=null) where T : class
         {
             var query = System.Web.HttpContext.Current.Request.QueryString;
             Type type = typeof(T);
@@ -27,7 +36,7 @@ namespace JQWidgetsSugar
             {
                 orderBy = "getdate()";
             }
-            var rows = sable.SelectToPageList<T>(selectFields, orderBy, pars.pagenum + 1, pars.pagesize);
+            var rows = sable.SelectToPageList<T>(selectFields, orderBy, pars.pagenum + 1, pars.pagesize,whereObj);
             var result = new JsonResultModel<T>()
             {
                 TotalRows = sable.Count(),

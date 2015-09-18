@@ -114,6 +114,17 @@
             jqxgrid通用类
             </summary>
         </member>
+        <member name="M:JQWidgetsSugar.JQXGrid.GetWidgetsSource``1(SqlSugar.Sqlable,JQWidgetsSugar.GridSearchParams,System.String,System.Object)">
+            <summary>
+             获取gridtable数据源
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sable"></param>
+            <param name="pars">查询参数</param>
+            <param name="selectFields">查询字段</param>
+            <param name="whereObj">参数条件</param>
+            <returns></returns>
+        </member>
         <member name="M:JQWidgetsSugar.PublicMehtod.ColumnsPrependCheckbox(System.Collections.Generic.List{JQWidgetsSugar.GridColumn})">
             <summary>
             给grid columns 索引0处添加checkbox columns
