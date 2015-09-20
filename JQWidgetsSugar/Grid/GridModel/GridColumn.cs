@@ -88,6 +88,8 @@ namespace JQWidgetsSugar
         /// 获取行编辑
         /// </summary>
         public string getEditorValue { get; set; }
+
+        public string columntype = ColumnType.Default;
     }
 
     /// <summary>
@@ -110,6 +112,14 @@ namespace JQWidgetsSugar
         public const string right = "right";
         public const string center = "center";
     }
+
+    public class ColumnType {
+        public const string Default = null;
+        public const string template = "template";
+        public const string custom="custom";
+    
+    }
+
     /// <summary>
     /// 数据类型
     /// </summary>
