@@ -84,6 +84,26 @@
             自定义表头后
             </summary>
         </member>
+        <member name="P:JQWidgetsSugar.GridColumn.autoRowHeight">
+            <summary>
+            单元格自动设置高度
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.createEditor">
+            <summary>
+            创建行编辑
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.initEditor">
+            <summary>
+            初始化行编辑
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.getEditorValue">
+            <summary>
+            获取行编辑
+            </summary>
+        </member>
         <member name="T:JQWidgetsSugar.ColumnGroups">
             <summary>
             列分组

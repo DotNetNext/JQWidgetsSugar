@@ -87,6 +87,9 @@ namespace JQWidgetsSugar
             reval = FuncAction(reval, @"""renderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""rendered""\:""(.*?)""");
             reval = FuncAction(reval, @"""initRowDetails""\:""(.*?)""");
+            reval = FuncAction(reval, @"""createEditor""\:""(.*?)""");
+            reval = FuncAction(reval, @"""initEditor""\:""(.*?)""");
+            reval = FuncAction(reval, @"""getEditorValue""\:""(.*?)""");
             return reval;
         }
 

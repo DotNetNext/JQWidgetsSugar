@@ -72,6 +72,22 @@ namespace JQWidgetsSugar
         /// 启动过滤
         /// </summary>
         public bool filterable = true;
+        /// <summary>
+        /// 单元格自动设置高度
+        /// </summary>
+        public bool autoRowHeight { get; set; }
+        /// <summary>
+        /// 创建行编辑
+        /// </summary>
+        public string createEditor { get; set; }
+        /// <summary>
+        /// 初始化行编辑
+        /// </summary>
+        public string initEditor { get; set; }
+        /// <summary>
+        /// 获取行编辑
+        /// </summary>
+        public string getEditorValue { get; set; }
     }
 
     /// <summary>
