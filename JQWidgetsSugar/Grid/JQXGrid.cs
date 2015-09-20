@@ -72,9 +72,17 @@ namespace JQWidgetsSugar
             {
                 gc.renderToolbar = "${toolbar}";
             }
+ 
             gridHtml.Append(jss.Serialize(gc));
             gridHtml.Append(");");
             var reval = gridHtml.ToString();
+            if (gc.editable)
+            {
+                reval = reval.Replace("${updateRow}", @" function (rowId, rowData, commit) {commit(true); }");
+            }
+            else {
+                reval = reval.Replace("${updateRow}", @" function (rowId, rowData, commit) {   }");
+            }
             reval = reval
                         .Replace("\"${toolbar}\"", GetToolbar(gridSelector, gc))
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter")
@@ -90,6 +98,7 @@ namespace JQWidgetsSugar
             reval = FuncAction(reval, @"""createEditor""\:""(.*?)""");
             reval = FuncAction(reval, @"""initEditor""\:""(.*?)""");
             reval = FuncAction(reval, @"""getEditorValue""\:""(.*?)""");
+            reval = FuncAction(reval, @"""updateRow""\:""(.*?)""");
             return reval;
         }
 
