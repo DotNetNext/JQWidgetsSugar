@@ -767,6 +767,7 @@
     <Content Include="Content\jqwidgets-ver3.8.1\styles\widget_icons.png" />
     <Content Include="Content\lib\SqlSugar.dll" />
     <Content Include="Content\lib\SqlSugar.pdb" />
+    <Content Include="Content\lib\SqlSugar.XML" />
     <Content Include="Content\lib\SyntacticSugar.dll" />
     <Content Include="Content\lib\SyntacticSugar.pdb" />
     <Content Include="Content\My97DatePickerBeta\demo.htm" />

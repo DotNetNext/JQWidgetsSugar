@@ -84,17 +84,17 @@
             自定义表头后
             </summary>
         </member>
-        <member name="T:JQWidgetsSugar.JQXGrid">
-            <summary>
-            jqxgrid通用类
-            </summary>
-        </member>
         <member name="M:JQWidgetsSugar.PublicMehtod.ColumnsPrependCheckbox(System.Collections.Generic.List{JQWidgetsSugar.GridColumn})">
             <summary>
             给grid columns 索引0处添加checkbox columns
             </summary>
             <param name="columns"></param>
             <returns></returns>
+        </member>
+        <member name="T:JQWidgetsSugar.JQXGrid">
+            <summary>
+            jqxgrid通用类
+            </summary>
         </member>
     </members>
 </doc>
