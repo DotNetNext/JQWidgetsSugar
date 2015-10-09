@@ -16,7 +16,8 @@ namespace JQWidgetsSugar
         public bool sortable = true;
         public bool editable = false;
         public bool filterable = true;
-        public string filterMode = FileModel.defaultValue;
+        public bool rowDetails = false;
+        public string filterMode = FilterModel.defaultValue;
         public string selectionMode = SelectionMode.multipleRows;
         public bool pageable = true;
         public int pagerButtonsCount = 10;
@@ -26,6 +27,7 @@ namespace JQWidgetsSugar
         public bool altRows = false;
         public int toolbarHeight = 35;
         public string localization = "${localization}";
+        public string initRowDetails { get; set; }
         public string renderToolbar { get; set; }
         public bool serverProcessing = true;
         public List<GridColumn> columns { get; set; }

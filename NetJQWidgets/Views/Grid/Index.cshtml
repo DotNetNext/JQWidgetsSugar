@@ -31,24 +31,24 @@
 
         //删除
         function del(row) {
-                var grid = $("#netgrid");
-                selection = [];
-                grid.find(".jqx_datatable_checkbox:checked").each(function () {
-                    var th = $(this);
-                    if (th.is(":checked")) {
-                        var index = th.attr("index");
-                        var data = grid.jqxDataTable('getRows')[index];
-                        selection.push(data.id);
-                    }
-                })
-                if (selection.length == 0) {
-                    jqxAlert('请选择一条记录！')
-                    return;
+            var grid = $("#netgrid");
+            selection = [];
+            grid.find(".jqx_datatable_checkbox:checked").each(function () {
+                var th = $(this);
+                if (th.is(":checked")) {
+                    var index = th.attr("index");
+                    var data = grid.jqxDataTable('getRows')[index];
+                    selection.push(data.id);
                 }
-                jqxDelete({ gridSelector: "#netgrid",
-                    url: "/Grid/Del2",
-                    data: { ids: selection }
-                });
+            })
+            if (selection.length == 0) {
+                jqxAlert('请选择一条记录！')
+                return;
+            }
+            jqxDelete({ gridSelector: "#netgrid",
+                url: "/Grid/Del2",
+                data: { ids: selection }
+            });
         }
 
         function save(row, isAdd) {
@@ -112,6 +112,10 @@
             factory.init();
             $("#netgrid").jqxDataTable('selectRow', 2);
         })
+
+        function initRowDetails(id, row, element, rowinfo) {
+            element.append($("<div style='margin: 10px;'>aa</div>"));
+        }
     </script>
     @Html.Raw(Model)
 }

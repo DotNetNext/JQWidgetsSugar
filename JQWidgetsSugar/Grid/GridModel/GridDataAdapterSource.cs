@@ -10,5 +10,6 @@ namespace JQWidgetsSugar
         public string url { get; set; }
         public List<GridDatafield> datafields = new List<GridDatafield>();
         public string datatype = "json";
+        public string updateRow = "${updateRow}";
     }
 }

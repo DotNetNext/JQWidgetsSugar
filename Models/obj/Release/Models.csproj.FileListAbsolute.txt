@@ -10,3 +10,7 @@ E:\Code\Git\jqWidgets\Models\bin\Release\Models.dll
 E:\Code\Git\jqWidgets\Models\bin\Release\Models.pdb
 E:\Code\Git\jqWidgets\Models\obj\Release\Models.dll
 E:\Code\Git\jqWidgets\Models\obj\Release\Models.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Models.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\bin\Release\Models.pdb
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.dll
+F:\OneDrive\Asp.net\学习DEMO\JQWIDGETS\Models\obj\Release\Models.pdb
