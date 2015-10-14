@@ -32,3 +32,4 @@ E:\Code\Git\jqWidgets\NetJQWidgets\bin\SyntacticSugar.pdb
 E:\Code\Git\jqWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.csprojResolveAssemblyReference.cache
 E:\Code\Git\jqWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.dll
 E:\Code\Git\jqWidgets\NetJQWidgets\obj\Debug\NetJQWidgets.pdb
+E:\Code\Git\jqWidgets\NetJQWidgets\bin\SqlSugar.xml

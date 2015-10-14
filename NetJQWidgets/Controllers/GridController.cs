@@ -16,6 +16,7 @@ namespace NetJQWidgets.Controllers
         {
             var adp = new GridDataAdapterSource();
             adp.url = "/Grid/Data";
+            adp.extendData = "a";
             var gc = new GridConfig();
             gc.gridbuttons = new List<GridButton>()
             {

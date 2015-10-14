@@ -116,9 +116,15 @@
         function initRowDetails(id, row, element, rowinfo) {
             element.append($("<div style='margin: 10px;'>aa</div>"));
         }
+
+        function a(data) {
+            data.b = $("#adsf").val()
+            return a;
+        }
     </script>
     @Html.Raw(Model)
 }
+<input id="adsf" value="adsf" />
 <div id="netgrid">
 </div>
 <div id="editbox" class="hide">

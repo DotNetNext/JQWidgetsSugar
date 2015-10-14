@@ -129,6 +129,13 @@
             选择类型
             </summary>
         </member>
+        <member name="M:JQWidgetsSugar.PublicMehtod.ColumnsPrependCheckbox(System.Collections.Generic.List{JQWidgetsSugar.GridColumn})">
+            <summary>
+            给grid columns 索引0处添加checkbox columns
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
         <member name="T:JQWidgetsSugar.JQXGrid">
             <summary>
             jqxgrid通用类
@@ -143,13 +150,6 @@
             <param name="pars">查询参数</param>
             <param name="selectFields">查询字段</param>
             <param name="whereObj">参数条件</param>
-            <returns></returns>
-        </member>
-        <member name="M:JQWidgetsSugar.PublicMehtod.ColumnsPrependCheckbox(System.Collections.Generic.List{JQWidgetsSugar.GridColumn})">
-            <summary>
-            给grid columns 索引0处添加checkbox columns
-            </summary>
-            <param name="columns"></param>
             <returns></returns>
         </member>
     </members>

@@ -64,7 +64,8 @@ namespace JQWidgetsSugar
             gridHtml.Append(@" var dataAdapter = new $.jqx.dataAdapter(source, {
                 downloadComplete: function (data) {
                     source.totalrecords = data.TotalRows;
-                }
+                },
+                formatData:" + (!string.IsNullOrEmpty(gda.extendData) ? "function (data) {  " + gda.extendData + "(data);  return data; }" : "function (data) { return data; }") + @"
             });");
             gridHtml.AppendLine();
             gridHtml.AppendFormat(@"$(""{0}"").jqxDataTable(", gridSelector);
