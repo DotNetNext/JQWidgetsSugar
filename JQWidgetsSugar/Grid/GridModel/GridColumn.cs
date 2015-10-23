@@ -29,6 +29,10 @@ namespace JQWidgetsSugar
         /// <summary>
         /// 对齐方式
         /// </summary>
+        public string align { get; set; }
+        /// <summary>
+        /// 对齐方式
+        /// </summary>
         public string cellsalign { get; set; }
         /// <summary>
         /// 格式化

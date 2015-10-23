@@ -25,3 +25,4 @@ E:\Code\Git\jqWidgets\DAL\bin\Release\SqlSugar.pdb
 E:\Code\Git\jqWidgets\DAL\obj\Release\DAL.dll
 E:\Code\Git\jqWidgets\DAL\obj\Release\DAL.pdb
 E:\Code\Git\jqWidgets\DAL\bin\Release\SqlSugar.xml
+E:\Code\Git\jqWidgets\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache

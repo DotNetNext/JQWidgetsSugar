@@ -49,6 +49,11 @@
             过滤类型
             </summary>
         </member>
+        <member name="P:JQWidgetsSugar.GridColumn.align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
         <member name="P:JQWidgetsSugar.GridColumn.cellsalign">
             <summary>
             对齐方式
