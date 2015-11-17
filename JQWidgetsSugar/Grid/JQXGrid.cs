@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using SqlSugar;
 using System.Text.RegularExpressions;
+using System.Web;
 namespace JQWidgetsSugar
 {
     /// <summary>
@@ -48,7 +49,12 @@ namespace JQWidgetsSugar
 
         public static object BindGrid(string gridSelector, GridDataAdapterSource gda, GridConfig gc)
         {
-
+            var rootUrl = GetRootURI();
+            if (rootUrl != "/")
+            {
+                gda.url = rootUrl +"/"+ gda.url.TrimStart('/');
+              
+            }
             if (gda.datafields == null || gda.datafields.Count == 0)
             {
                 foreach (var it in gc.columns)
@@ -322,6 +328,30 @@ function renderedFunc(element) {
                     return " " + filterDataField + " LIKE '%" + filterValue + "'";
             }
             return "";
+        }
+
+        // <summary>
+        /// 取得网站的根目录的URL
+        /// </summary>
+        /// <returns></returns>
+        private static string GetRootURI()
+        {
+            string AppPath = "";
+            HttpContext HttpCurrent = HttpContext.Current;
+            HttpRequest Req;
+            if (HttpCurrent != null)
+            {
+                Req = HttpCurrent.Request;
+
+                string UrlAuthority = Req.Url.GetLeftPart(UriPartial.Authority);
+                if (Req.ApplicationPath == null || Req.ApplicationPath == "/")
+                    //直接安装在   Web   站点   
+                    AppPath = UrlAuthority;
+                else
+                    //安装在虚拟子目录下   
+                    AppPath = UrlAuthority + Req.ApplicationPath;
+            }
+            return AppPath;
         }
 
         public static PublicMehtod PublicMehtod

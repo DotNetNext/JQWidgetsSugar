@@ -157,5 +157,6 @@
             <param name="whereObj">参数条件</param>
             <returns></returns>
         </member>
+        <!-- 对于成员“M:JQWidgetsSugar.JQXGrid.GetRootURI”忽略有格式错误的 XML 注释 -->
     </members>
 </doc>
