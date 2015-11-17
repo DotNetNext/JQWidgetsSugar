@@ -29,7 +29,7 @@ namespace NetJQWidgets.Controllers
             gc.width = "80%";
             gc.filterMode = FilterModel.advanced;
             gc.selectionMode = SelectionMode.multipleRows;
-            gc.rowDetails = true;
+           // gc.rowDetails = true;
             gc.columns = new List<GridColumn>(){
                new GridColumn(){ text="编号", datafield="id", hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
                new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },

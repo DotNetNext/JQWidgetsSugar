@@ -29,6 +29,7 @@ namespace JQWidgetsSugar
         public string localization = "${localization}";
         public string initRowDetails { get; set; }
         public string renderToolbar { get; set; }
+        public bool enableBrowserSelection = false;
         public bool serverProcessing = true;
         public List<GridColumn> columns { get; set; }
         public List<ColumnGroups> columnGroups { get; set; }
