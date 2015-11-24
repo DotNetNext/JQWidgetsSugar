@@ -109,6 +109,21 @@
             获取行编辑
             </summary>
         </member>
+        <member name="P:JQWidgetsSugar.GridColumn.minWidth">
+            <summary>
+            最小宽度
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.maxWidth">
+            <summary>
+            最大宽度
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.className">
+            <summary>
+            指定类名
+            </summary>
+        </member>
         <member name="T:JQWidgetsSugar.ColumnGroups">
             <summary>
             列分组

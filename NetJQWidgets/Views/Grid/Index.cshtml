@@ -16,7 +16,7 @@
 
         }
         function namefun() {
-            return "namefun";
+            return "<a style='' onclick='alert(1)'>ok</a>";
         }
 
         //添加
@@ -111,6 +111,10 @@
             window.factory = new validateFactory($("form"), "<img src=\"/Content/jquery-validation-1.13.1/error.png\" />");
             factory.init();
             $("#netgrid").jqxDataTable('selectRow', 2);
+            setTimeout(function () {
+                $("#netgrid").jqxDataTable('unselectRow', 0);
+        
+            }, 2000)
         })
 
         function initRowDetails(id, row, element, rowinfo) {
@@ -124,7 +128,7 @@
     </script>
     @Html.Raw(Model)
 }
-<input id="adsf" value="adsf" style=" margin-bottom:1000px" />
+<input id="adsf" value="adsf" style=" margin-bottom:1000px; position:absolute;" />
 <br />
 <div id="netgrid">
 </div>

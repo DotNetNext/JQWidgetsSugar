@@ -94,6 +94,19 @@ namespace JQWidgetsSugar
         public string getEditorValue { get; set; }
 
         public string columntype = ColumnType.Default;
+        /// <summary>
+        /// 最小宽度
+        /// </summary>
+        public string minWidth { get; set; }
+
+        /// <summary>
+        /// 最大宽度
+        /// </summary>
+        public string maxWidth { get; set; }
+        /// <summary>
+        /// 指定类名
+        /// </summary>
+        public string className { get; set; } 
     }
 
     /// <summary>
