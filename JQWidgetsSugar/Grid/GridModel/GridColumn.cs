@@ -97,12 +97,12 @@ namespace JQWidgetsSugar
         /// <summary>
         /// 最小宽度
         /// </summary>
-        public string minWidth { get; set; }
+        public string minWidth = "0";
 
         /// <summary>
         /// 最大宽度
         /// </summary>
-        public string maxWidth { get; set; }
+        public string maxWidth = "100000";
         /// <summary>
         /// 指定类名
         /// </summary>
