@@ -155,3 +155,23 @@
 .jqx-editor-toolbar-icon-shinyblack {
     background: url('images/html_editor_white.png') no-repeat;
 }
+.jqx-layout-shinyblack
+{
+    background-color: #000;
+}
+.jqx-layout-pseudo-window-pin-icon-shinyblack
+{
+    background-image: url("images/pin-white.png");
+}
+.jqx-layout-pseudo-window-pinned-icon-shinyblack
+{
+    background-image: url("images/pinned-white.png");
+}
+.jqx-scheduler-month-cell-shinyblack, .jqx-scheduler-time-column-shinyblack, .jqx-scheduler-toolbar-shinyblack
+{
+    background: #35353A !important;
+    color: #fff  !important;
+}
+.jqx-widget-shinyblack .jqx-scheduler-middle-cell-shinyblack, .jqx-scheduler-middle-cell-shinyblack {
+    border-bottom-color: #35353A !important;
+}

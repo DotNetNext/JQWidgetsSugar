@@ -22,7 +22,7 @@ namespace JQWidgetsSugar
         /// <param name="selectFields">查询字段</param>
         /// <param name="whereObj">参数条件</param>
         /// <returns></returns>
-        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars, string selectFields = "*", object whereObj=null) where T : class
+        public static JsonResultModel<T> GetWidgetsSource<T>(Sqlable sable, GridSearchParams pars, string selectFields = "*", object whereObj = null) where T : class
         {
             var query = System.Web.HttpContext.Current.Request.QueryString;
             Type type = typeof(T);
@@ -37,7 +37,7 @@ namespace JQWidgetsSugar
             {
                 orderBy = "getdate()";
             }
-            var rows = sable.SelectToPageList<T>(selectFields, orderBy, pars.pagenum + 1, pars.pagesize,whereObj);
+            var rows = sable.SelectToPageList<T>(selectFields, orderBy, pars.pagenum + 1, pars.pagesize, whereObj);
             var result = new JsonResultModel<T>()
             {
                 TotalRows = sable.Count(whereObj),
@@ -49,11 +49,12 @@ namespace JQWidgetsSugar
 
         public static object BindGrid(string gridSelector, GridDataAdapterSource gda, GridConfig gc)
         {
+       
             var rootUrl = GetRootURI();
             if (rootUrl != "/")
             {
-                gda.url = rootUrl +"/"+ gda.url.TrimStart('/');
-              
+                gda.url = rootUrl + "/" + gda.url.TrimStart('/');
+
             }
             if (gda.datafields == null || gda.datafields.Count == 0)
             {
@@ -79,7 +80,7 @@ namespace JQWidgetsSugar
             {
                 gc.renderToolbar = "${toolbar}";
             }
- 
+
             gridHtml.Append(jss.Serialize(gc));
             gridHtml.Append(");");
             var reval = gridHtml.ToString();
@@ -87,7 +88,8 @@ namespace JQWidgetsSugar
             {
                 reval = reval.Replace("${updateRow}", @" function (rowId, rowData, commit) {commit(true); }");
             }
-            else {
+            else
+            {
                 reval = reval.Replace("${updateRow}", @" function (rowId, rowData, commit) {   }");
             }
             reval = reval

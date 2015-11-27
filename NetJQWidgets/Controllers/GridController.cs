@@ -31,9 +31,9 @@ namespace NetJQWidgets.Controllers
             gc.selectionMode = SelectionMode.multipleRows;
            // gc.rowDetails = true;
             gc.columns = new List<GridColumn>(){
-               new GridColumn(){ text="编号", datafield="id", hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
-               new GridColumn(){ text="名称", datafield="name", cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },
-               new GridColumn(){ text="产品名", datafield="productname", cellsalign=AlignType.left,datatype=Datatype.datastring },
+               new GridColumn(){ text="编号", datafield="id",hidden=true, width="40px", cellsalign=AlignType.left,datatype=Datatype.dataint  },
+               new GridColumn(){ text="名称", datafield="name", className="minwidth", width="200",  cellsalign=AlignType.left,datatype=Datatype.datastring, cellsRenderer="namefun" },
+               new GridColumn(){ text="产品名", datafield="productname", width="500px", cellsalign=AlignType.left,datatype=Datatype.datastring },
                new GridColumn(){ text="数量", datafield="quantity", cellsalign=AlignType.right , datatype=Datatype.dataint },
                new GridColumn(){ text="创建时间", datafield="date", cellsformat="yyyy-MM-dd",cellsalign=AlignType.right, datatype=Datatype.datadate 
               }

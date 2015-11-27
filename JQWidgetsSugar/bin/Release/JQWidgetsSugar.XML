@@ -34,16 +34,6 @@
             启动过滤
             </summary>
         </member>
-        <member name="F:JQWidgetsSugar.GridColumn.minWidth">
-            <summary>
-            最小宽度
-            </summary>
-        </member>
-        <member name="F:JQWidgetsSugar.GridColumn.maxWidth">
-            <summary>
-            最大宽度
-            </summary>
-        </member>
         <member name="P:JQWidgetsSugar.GridColumn.text">
             <summary>
             显示列名

@@ -200,3 +200,28 @@
 .jqx-editor-toolbar-icon-ui-start {
     background: url('images/html_editor_white.png') no-repeat;
 }
+.jqx-layout-ui-start
+{
+    background-color: #4297d7;
+    background-image: none;
+}
+.jqx-layout-pseudo-window-pin-icon-ui-start
+{
+    background-image: url("images/pin-lightblue.png");
+}
+.jqx-layout-pseudo-window-pinned-icon-ui-start
+{
+    background-image: url("images/pinned-lightblue.png");
+}
+.jqx-scheduler-month-cell-ui-start, .jqx-scheduler-time-column-ui-start, .jqx-scheduler-toolbar-ui-start
+{
+    background: #4297d7 !important;
+    color: #fff  !important;
+}
+.jqx-widget-ui-start .jqx-scheduler-middle-cell-ui-start, .jqx-scheduler-middle-cell-ui-start {
+    border-bottom-color: #4297d7 !important;
+}
+.jqx-docking-layout-group-floating-ui-start .jqx-window-header-ui-start
+{
+    background-image: none;
+}

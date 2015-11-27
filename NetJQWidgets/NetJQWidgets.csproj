@@ -604,6 +604,18 @@
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\overcast\ui-icons_70b2e1_256x240.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\overcast\ui-icons_999999_256x240.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\overcast\ui-icons_fbc856_256x240.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin-black.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin-blue.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin-lightblue.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin-white.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin-yellow.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pin.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned-black.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned-blue.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned-lightblue.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned-white.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned-yellow.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pinned.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\plus.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\plus_white.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\pointer.png" />
@@ -682,6 +694,7 @@
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\start\ui-icons_fcd113_256x240.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\star_disabled.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\star_hover.png" />
+    <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\stripes.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\success.png" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\sunny\ReadMe.txt" />
     <Content Include="Content\jqwidgets-ver3.8.1\jqwidgets\styles\images\sunny\ui-bg_diagonals-medium_20_d34d17_40x40.png" />

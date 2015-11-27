@@ -329,7 +329,11 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-
+.jqx-tree-item-arrow-collapse-blackberry {
+    background-image: url('images/icon-right.png') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .jqx-tree-item-arrow-collapse-rtl-blackberry, .jqx-tree-item-arrow-collapse-hover-rtl-blackberry {
     background-image: url(images/icon-left.png);
 }
@@ -638,3 +642,15 @@ input[type=text].jqx-input-blackberry, input[type=password].jqx-input-blackberry
 }
 .jqx-file-upload-file-name-blackberry{padding:3px;}
 .jqx-file-upload-file-row-blackberry{ height: 40px;}
+.jqx-layout-blackberry
+{
+    background-color: #296b8e;
+}
+.jqx-layout-pseudo-window-pin-icon-blackberry
+{
+    background-image: url("images/pin-white.png");
+}
+.jqx-layout-pseudo-window-pinned-icon-blackberry
+{
+    background-image: url("images/pinned-white.png");
+}

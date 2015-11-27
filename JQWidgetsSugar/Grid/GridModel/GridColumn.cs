@@ -94,15 +94,7 @@ namespace JQWidgetsSugar
         public string getEditorValue { get; set; }
 
         public string columntype = ColumnType.Default;
-        /// <summary>
-        /// 最小宽度
-        /// </summary>
-        public string minWidth = "0";
 
-        /// <summary>
-        /// 最大宽度
-        /// </summary>
-        public string maxWidth = "100000";
         /// <summary>
         /// 指定类名
         /// </summary>
