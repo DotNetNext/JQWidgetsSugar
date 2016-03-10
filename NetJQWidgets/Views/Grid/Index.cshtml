@@ -125,10 +125,15 @@
             data.b = $("#adsf").val()
             return a;
         }
+        $(function () {
+            $(window).resize(function () {
+                alert(1);
+            })
+        })
     </script>
     @Html.Raw(Model)
     <style>
-   
+    .jqx-window-modal{ max-width:20px; max-height:20px}
     </style>
 }
 <input id="adsf" value="adsf" style=" margin-bottom:1000px; position:absolute;" />

@@ -55,7 +55,7 @@ namespace NetJQWidgets.Controllers
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
                 ActionResultModel<string> model = new ActionResultModel<string>();
-                model.isSuccess = db.Delete<GridTable>(id);
+                model.isSuccess = db.Delete<GridTable,int>(id);
                 model.respnseInfo = model.isSuccess ? "删除成功" : "删除失败";
                 return Json(model);
             }
@@ -66,7 +66,7 @@ namespace NetJQWidgets.Controllers
             using (SqlSugarClient db = SugarDao.GetInstance())
             {
                 ActionResultModel<string> model = new ActionResultModel<string>();
-                model.isSuccess = db.Delete<GridTable>(ids);
+                model.isSuccess = db.Delete<GridTable,string>(ids);
                 model.respnseInfo = model.isSuccess ? "删除成功" : "删除失败";
                 return Json(model);
             }
@@ -123,7 +123,7 @@ namespace NetJQWidgets.Controllers
                     pars.sortorder = "desc";
                 }
                 Sqlable sable = db.Sqlable().Form<GridTable>("g");//查询表的sqlable对象
-                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars,"g.id,g.name");//根据grid的参数自动查询
+                var model = JQXGrid.GetWidgetsSource<Models.GridTable>(sable, pars,"g.*");//根据grid的参数自动查询
                 return Json(model, JsonRequestBehavior.AllowGet);
             }
         }
