@@ -97,7 +97,20 @@ namespace JQWidgetsSugar
                         .Replace("\"source\":\"dataAdapter\"", "\"source\":dataAdapter")
                         .Replace("\"${localization}\"", "jqxLocalization");
             reval += GetCheckFunc(gridSelector);
-            reval = string.Format("$(function(){{  {0} }})", reval);
+            string checkBoxEeventHtml=@"
+  $("""+gridSelector+@""").on(""click"", ""input:checkbox"", function () {
+                var th = $(this);
+                var isChecked = th.prop(""checked"");
+                if (!isChecked) {
+                    $("""+gridSelector+ @""").find(""#jqx_datatable_checkbox_all"").jqxCheckBox(""uncheck"");
+                }
+            });
+  setTimeout(function () {
+         $(window).resize();
+   },2000)
+";
+            reval = string.Format(@"$(function(){{  {0};
+{1} }})", reval, checkBoxEeventHtml);
             reval = ("<script>\r\n") + reval + ("\n\r</script>");
 
             reval = FuncAction(reval, @"""cellsRenderer""\:""(.*?)""");
@@ -107,6 +120,7 @@ namespace JQWidgetsSugar
             reval = FuncAction(reval, @"""createEditor""\:""(.*?)""");
             reval = FuncAction(reval, @"""initEditor""\:""(.*?)""");
             reval = FuncAction(reval, @"""getEditorValue""\:""(.*?)""");
+            reval = FuncAction(reval, @"""ready""\:""(.*?)""");
             reval = FuncAction(reval, @"""updateRow""\:""(.*?)""");
             return reval;
         }
@@ -126,7 +140,7 @@ function rendererFunc() {
 function renderedFunc(element) {
     var grid = $(""" + gridSelector + @""");
     element.jqxCheckBox();
-    element.on('change', function (event) {
+    element.on('click', function (event) {
         var checked = element.jqxCheckBox('checked');
 
         if (checked) {

@@ -13,7 +13,7 @@ namespace JQWidgetsSugar
         /// <param name="columns"></param>
         /// <returns></returns>
         public  void ColumnsPrependCheckbox(List<GridColumn> columns) {
-            columns.Insert(0, new GridColumn() { text = "", datafield = "checkbox", renderer = "rendererFunc", rendered = "renderedFunc", cellsRenderer = "cellsRendererFunc", sortable = false, filterable = false });
+            columns.Insert(0, new GridColumn() { width="25px", text = "", datafield = "checkbox", renderer = "rendererFunc", rendered = "renderedFunc", cellsRenderer = "cellsRendererFunc", sortable = false, filterable = false });
         }
     }
 }

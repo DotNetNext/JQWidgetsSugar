@@ -24,6 +24,7 @@ namespace JQWidgetsSugar
         public bool showToolbar = true;
         public bool columnsResize = true;
         public string rendered { get; set; }
+        public string ready { get; set; }
         public bool altRows = false;
         public int toolbarHeight = 35;
         public string localization = "${localization}";
