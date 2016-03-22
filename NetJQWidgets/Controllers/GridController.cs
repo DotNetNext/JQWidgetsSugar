@@ -113,7 +113,7 @@ namespace NetJQWidgets.Controllers
             }
         }
 
-        [OutputCache(Duration = 0)]
+      
         public JsonResult Data(GridSearchParams pars)
         {
             using (SqlSugarClient db = SugarDao.GetInstance())

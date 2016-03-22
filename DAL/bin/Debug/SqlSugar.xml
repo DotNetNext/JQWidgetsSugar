@@ -104,6 +104,16 @@
             <param name="whereObj">SQL参数,例如:new{id=1,name="张三"}</param>
             <returns></returns>
         </member>
+        <member name="M:SqlSugar.SqlableExtensions.SelectToDataTable(SqlSugar.Sqlable,System.String,System.Object)">
+            <summary>
+            设置查询列执行查询，并且将结果集转成DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sqlable"></param>
+            <param name="fileds">查询列</param>
+            <param name="whereObj">SQL参数,例如:new{id=1,name="张三"}</param>
+            <returns></returns>
+        </member>
         <member name="M:SqlSugar.SqlableExtensions.Count(SqlSugar.Sqlable,System.Object)">
             <summary>
             反回记录数
@@ -360,6 +370,14 @@
         <member name="M:SqlSugar.QueryableExtensions.ToList``1(SqlSugar.Queryable{``0})">
             <summary>
             将Queryable转换为List《T》集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="queryable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SqlSugar.QueryableExtensions.ToDataTable``1(SqlSugar.Queryable{``0})">
+            <summary>
+            将Queryable转换为DataTable
             </summary>
             <typeparam name="T"></typeparam>
             <param name="queryable"></param>
@@ -761,9 +779,20 @@
             注意：rowObj为T类型将更新该实体的非主键所有列，如果rowObj类型为匿名类将更新指定列
             使用说明:sqlSugar.Update《T》(rowObj,whereObj);
             </summary>
-            <typeparam name="TEntity"></typeparam>
+            <typeparam name="T"></typeparam>
             <param name="rowObj">new T(){name="张三",sex="男"}或者new {name="张三",sex="男"}</param>
-            <param name="whereObj">new {id=100}</param>
+            <param name="expression">new {id=100}</param>
+            <returns></returns>
+        </member>
+        <member name="M:SqlSugar.SqlSugarClient.Update``2(System.Object,``1[])">
+            <summary>
+            更新
+            注意：rowObj为T类型将更新该实体的非主键所有列，如果rowObj类型为匿名类将更新指定列
+            使用说明:sqlSugar.Update《T》(rowObj,whereObj);
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="rowObj">new T(){name="张三",sex="男"}或者new {name="张三",sex="男"}</param>
+            <param name="expression">new {id=100}</param>
             <returns></returns>
         </member>
         <member name="M:SqlSugar.SqlSugarClient.Delete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
@@ -774,7 +803,7 @@
             </summary>
             <param name="expression">筛选表达示</param>
         </member>
-        <member name="M:SqlSugar.SqlSugarClient.Delete``1(System.Object[])">
+        <member name="M:SqlSugar.SqlSugarClient.Delete``2(``1[])">
             <summary>
             批量删除
             注意：whereIn 主键集合  
@@ -782,26 +811,9 @@
             </summary>
             <param name="whereIn"> delete ids </param>
         </member>
-        <member name="M:SqlSugar.SqlSugarClient.Delete``1(System.Int32[])">
-            <summary>
-            批量删除
-            注意：whereIn field 为class中的第一个属性
-            使用说明:Delete《T》(new int[]{1,2,3}) 或者  Delete《T》(3)
-            </summary>
-            <param name="whereIn"> delete ids </param>
-        </member>
-        <member name="M:SqlSugar.SqlSugarClient.Delete``1(System.Guid[])">
-            <summary>
-            批量删除
-            注意：whereIn field 为class中的第一个属性
-            使用说明:Delete《T》(new int[]{1,2,3}) 或者  Delete《T》(3)
-            </summary>
-            <param name="whereIn"> delete ids </param>
-        </member>
         <member name="M:SqlSugar.SqlSugarClient.FalseDelete``1(System.String,System.Object[])">
             <summary>
             批量假删除
-            注意：whereIn field 为class中的第一个属性
             使用说明::
             FalseDelete《T》("is_del",new int[]{1,2,3})或者Delete《T》("is_del",3)
             </summary>
@@ -850,7 +862,7 @@
             ** 使用说明：
             </summary>
         </member>
-        <member name="M:SqlSugar.SqlSugarTool.DataReaderToList``1(System.Type,System.Data.IDataReader,System.Boolean)">
+        <member name="M:SqlSugar.SqlSugarTool.DataReaderToList``1(System.Type,System.Data.IDataReader,System.String,System.Boolean)">
             <summary>
             Reader转成List《T》
             </summary>
@@ -896,6 +908,13 @@
             </summary>
             <param name="db"></param>
             <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SqlSugar.SqlSugarTool.SqlLikeWordEncode(System.String)">
+            <summary>
+            处理like条件的通配符
+            </summary>
+            <param name="word"></param>
             <returns></returns>
         </member>
         <member name="T:SqlSugar.JoinType">

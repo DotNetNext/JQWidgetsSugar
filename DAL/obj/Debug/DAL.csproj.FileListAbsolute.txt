@@ -8,6 +8,6 @@ E:\Code\Git\jqWidgets\DAL\bin\Debug\DAL.dll
 E:\Code\Git\jqWidgets\DAL\bin\Debug\DAL.pdb
 E:\Code\Git\jqWidgets\DAL\bin\Debug\SqlSugar.dll
 E:\Code\Git\jqWidgets\DAL\bin\Debug\SqlSugar.pdb
+E:\Code\Git\jqWidgets\DAL\bin\Debug\SqlSugar.xml
 E:\Code\Git\jqWidgets\DAL\obj\Debug\DAL.dll
 E:\Code\Git\jqWidgets\DAL\obj\Debug\DAL.pdb
-E:\Code\Git\jqWidgets\DAL\bin\Debug\SqlSugar.xml
