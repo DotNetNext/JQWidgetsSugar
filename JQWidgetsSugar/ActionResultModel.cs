@@ -8,6 +8,6 @@ namespace JQWidgetsSugar
     public class ActionResultModel<T>
     {
         public bool isSuccess { get; set; }
-        public T respnseInfo { get; set; }
+        public T responseInfo { get; set; }
     }
 }

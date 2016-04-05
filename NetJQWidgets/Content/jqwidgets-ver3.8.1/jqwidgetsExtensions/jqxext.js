@@ -86,7 +86,7 @@ function jqxDelete(options) {
             dataType: "json",
             success: function (msg) {
                 if (msg.isSuccess == false) {
-                    jqxAlert(msg.respnseInfo);
+                    jqxAlert(msg.responseInfo);
 
                 }
                 if ($(gridSelector).find(".jqx_datatable_checkbox_all").size() > 0)

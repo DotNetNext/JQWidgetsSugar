@@ -56,7 +56,7 @@ namespace NetJQWidgets.Controllers
             {
                 ActionResultModel<string> model = new ActionResultModel<string>();
                 model.isSuccess = db.Delete<GridTable,int>(id);
-                model.respnseInfo = model.isSuccess ? "删除成功" : "删除失败";
+                model.responseInfo = model.isSuccess ? "删除成功" : "删除失败";
                 return Json(model);
             }
         }
@@ -67,7 +67,7 @@ namespace NetJQWidgets.Controllers
             {
                 ActionResultModel<string> model = new ActionResultModel<string>();
                 model.isSuccess = db.Delete<GridTable,string>(ids);
-                model.respnseInfo = model.isSuccess ? "删除成功" : "删除失败";
+                model.responseInfo = model.isSuccess ? "删除成功" : "删除失败";
                 return Json(model);
             }
             return null;
@@ -83,11 +83,11 @@ namespace NetJQWidgets.Controllers
                 if (isValid)//后台验证数据完整性
                 {
                     model.isSuccess = db.Insert(gt) != DBNull.Value;
-                    model.respnseInfo = model.isSuccess ? "添加成功" : "添加失败";
+                    model.responseInfo = model.isSuccess ? "添加成功" : "添加失败";
                 }
                 else {
                     model.isSuccess = false;
-                    model.respnseInfo = message;
+                    model.responseInfo = message;
                 }
                 return Json(model);
             }
@@ -103,11 +103,11 @@ namespace NetJQWidgets.Controllers
                 if (isValid)//后台验证数据完整性
                 {
                     model.isSuccess = db.Update<GridTable>(gt, it => it.id == gt.id);
-                    model.respnseInfo = model.isSuccess ? "编辑成功" : "编辑失败";
+                    model.responseInfo = model.isSuccess ? "编辑成功" : "编辑失败";
                 }
                 else {
                     model.isSuccess = false;
-                    model.respnseInfo = message;
+                    model.responseInfo = message;
                 }
                 return Json(model);
             }

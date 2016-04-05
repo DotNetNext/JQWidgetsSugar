@@ -91,7 +91,7 @@
                         type: type,
                         success: function (msg) {
                             if (msg.isSuccess == false) {
-                                jqxAlert(msg.respnseInfo);
+                                jqxAlert(msg.responseInfo);
                             }
                             $("#netgrid").jqxDataTable('updateBoundData');
                             $("#editbox").jqxWindow("close")
