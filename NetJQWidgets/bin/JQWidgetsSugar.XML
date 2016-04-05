@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JQWidgetsSugar</name>
+    </assembly>
+    <members>
+        <member name="T:JQWidgetsSugar.GridColumn">
+            <summary>
+            jqxGrid 列属性设置
+            </summary>
+        </member>
+        <member name="F:JQWidgetsSugar.GridColumn.width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="F:JQWidgetsSugar.GridColumn.hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="F:JQWidgetsSugar.GridColumn.pinned">
+            <summary>
+            是否锁列
+            </summary>
+        </member>
+        <member name="F:JQWidgetsSugar.GridColumn.sortable">
+            <summary>
+            启动排序
+            </summary>
+        </member>
+        <member name="F:JQWidgetsSugar.GridColumn.filterable">
+            <summary>
+            启动过滤
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.text">
+            <summary>
+            显示列名
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.datafield">
+            <summary>
+            字段
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.filtertype">
+            <summary>
+            过滤类型
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.cellsalign">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.cellsformat">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.datatype">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.columngroup">
+            <summary>
+            表头分组
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.cellsRenderer">
+            <summary>
+            自定义单元格
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.renderer">
+            <summary>
+            自定义表头
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.rendered">
+            <summary>
+            自定义表头后
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.autoRowHeight">
+            <summary>
+            单元格自动设置高度
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.createEditor">
+            <summary>
+            创建行编辑
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.initEditor">
+            <summary>
+            初始化行编辑
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.getEditorValue">
+            <summary>
+            获取行编辑
+            </summary>
+        </member>
+        <member name="P:JQWidgetsSugar.GridColumn.className">
+            <summary>
+            指定类名
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.ColumnGroups">
+            <summary>
+            列分组
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.AlignType">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.Datatype">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.FilterModel">
+            <summary>
+            过滤类型
+            </summary>
+        </member>
+        <member name="T:JQWidgetsSugar.SelectionMode">
+            <summary>
+            选择类型
+            </summary>
+        </member>
+        <member name="M:JQWidgetsSugar.PublicMehtod.ColumnsPrependCheckbox(System.Collections.Generic.List{JQWidgetsSugar.GridColumn})">
+            <summary>
+            给grid columns 索引0处添加checkbox columns
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JQWidgetsSugar.JQXGrid">
+            <summary>
+            jqxgrid通用类
+            </summary>
+        </member>
+        <member name="M:JQWidgetsSugar.JQXGrid.GetWidgetsSource``1(SqlSugar.Sqlable,JQWidgetsSugar.GridSearchParams,System.String,System.Object)">
+            <summary>
+             获取gridtable数据源
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sable"></param>
+            <param name="pars">查询参数</param>
+            <param name="selectFields">查询字段</param>
+            <param name="whereObj">参数条件</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:JQWidgetsSugar.JQXGrid.GetRootURI”忽略有格式错误的 XML 注释 -->
+    </members>
+</doc>

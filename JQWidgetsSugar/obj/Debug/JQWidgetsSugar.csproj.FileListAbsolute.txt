@@ -12,4 +12,3 @@ E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Debug\SqlSugar.pdb
 E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Debug\SqlSugar.xml
 E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Debug\JQWidgetsSugar.dll
 E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Debug\JQWidgetsSugar.pdb
-E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Debug\JQWidgetsSugar.csprojResolveAssemblyReference.cache
