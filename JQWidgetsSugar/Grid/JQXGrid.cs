@@ -199,7 +199,7 @@ function renderedFunc(element) {
             gc.gridbuttons.ForEach(it =>
             {
 
-                sb.AppendFormat("var {0} = $(buttonTemplate);", it.name);
+                sb.AppendFormat("var {0} = $(buttonTemplate); {0}.attr('data-id','{0}');", it.name);
                 sb.AppendLine();
             });
 
