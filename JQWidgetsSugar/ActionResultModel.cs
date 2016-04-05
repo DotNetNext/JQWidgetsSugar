@@ -9,5 +9,6 @@ namespace JQWidgetsSugar
     {
         public bool isSuccess { get; set; }
         public T responseInfo { get; set; }
+        public int totalRows { get; set; }
     }
 }
