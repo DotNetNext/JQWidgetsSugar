@@ -144,7 +144,7 @@ function renderedFunc(element) {
         var checked = element.jqxCheckBox('checked');
         var time = $(""body"").data("""+gridSelector+ @""");
                      if (time == null) {
-                         time = 1000;
+                         time = 1200;
                          $(""body"").data(""" + gridSelector + @""",0);
                      }
                      setTimeout(function () {
