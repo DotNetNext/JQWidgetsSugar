@@ -311,39 +311,45 @@ function renderedFunc(element) {
                 case "NULL":
                     return " " + filterDataField + " LIKE '" + "" + "'";
                 case "CONTAINS_CASE_SENSITIVE":
-                    return " " + filterDataField + " LIKE '%" + filterValue + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS";
+                    return " " + filterDataField + " LIKE '%" + SqlFilter(filterValue) + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS";
                 case "CONTAINS":
-                    return " " + filterDataField + " LIKE '%" + filterValue + "%'";
+                    return " " + filterDataField + " LIKE '%" + SqlFilter(filterValue) + "%'";
                 case "DOES_NOT_CONTAIN_CASE_SENSITIVE":
-                    return " " + filterDataField + " NOT LIKE '%" + filterValue + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
+                    return " " + filterDataField + " NOT LIKE '%" + SqlFilter(filterValue) + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
                 case "DOES_NOT_CONTAIN":
-                    return " " + filterDataField + " NOT LIKE '%" + filterValue + "%'";
+                    return " " + filterDataField + " NOT LIKE '%" + SqlFilter(filterValue) + "%'";
                 case "EQUAL_CASE_SENSITIVE":
-                    return " " + filterDataField + " = '" + filterValue + "'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
+                    return " " + filterDataField + " = '" + SqlFilter(filterValue) + "'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
                 case "EQUAL":
-                    return " " + filterDataField + " = '" + filterValue + "'";
+                    return " " + filterDataField + " = '" + SqlFilter(filterValue) + "'";
                 case "NOT_EQUAL_CASE_SENSITIVE":
-                    return " BINARY " + filterDataField + " <> '" + filterValue + "'";
+                    return " BINARY " + filterDataField + " <> '" + SqlFilter(filterValue) + "'";
                 case "NOT_EQUAL":
-                    return " " + filterDataField + " <> '" + filterValue + "'";
+                    return " " + filterDataField + " <> '" + SqlFilter(filterValue) + "'";
                 case "GREATER_THAN":
-                    return " " + filterDataField + " > '" + filterValue + "'";
+                    return " " + filterDataField + " > '" + SqlFilter(filterValue) + "'";
                 case "LESS_THAN":
-                    return " " + filterDataField + " < '" + filterValue + "'";
+                    return " " + filterDataField + " < '" + SqlFilter(filterValue) + "'";
                 case "GREATER_THAN_OR_EQUAL":
-                    return " " + filterDataField + " >= '" + filterValue + "'";
+                    return " " + filterDataField + " >= '" + SqlFilter(filterValue) + "'";
                 case "LESS_THAN_OR_EQUAL":
-                    return " " + filterDataField + " <= '" + filterValue + "'";
+                    return " " + filterDataField + " <= '" + SqlFilter(filterValue) + "'";
                 case "STARTS_WITH_CASE_SENSITIVE":
-                    return " " + filterDataField + " LIKE '" + filterValue + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
+                    return " " + filterDataField + " LIKE '" + SqlFilter(filterValue) + "%'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
                 case "STARTS_WITH":
-                    return " " + filterDataField + " LIKE '" + filterValue + "%'";
+                    return " " + filterDataField + " LIKE '" + SqlFilter(filterValue) + "%'";
                 case "ENDS_WITH_CASE_SENSITIVE":
-                    return " " + filterDataField + " LIKE '%" + filterValue + "'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
+                    return " " + filterDataField + " LIKE '%" + SqlFilter(filterValue) + "'" + " COLLATE SQL_Latin1_General_CP1_CS_AS"; ;
                 case "ENDS_WITH":
-                    return " " + filterDataField + " LIKE '%" + filterValue + "'";
+                    return " " + filterDataField + " LIKE '%" + SqlFilter(filterValue) + "'";
             }
             return "";
+        }
+
+        private static string SqlFilter(string filterValue)
+        {
+            if(filterValue==null)return filterValue;
+            return filterValue.Replace("'", "''");
         }
 
         // <summary>
