@@ -26,3 +26,4 @@ E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Release\SqlSugar.xml
 E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.dll
 E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.pdb
 E:\Code\Git\jqWidgets\JQWidgetsSugar\bin\Release\JQWidgetsSugar.XML
+E:\Code\Git\jqWidgets\JQWidgetsSugar\obj\Release\JQWidgetsSugar.csprojResolveAssemblyReference.cache
