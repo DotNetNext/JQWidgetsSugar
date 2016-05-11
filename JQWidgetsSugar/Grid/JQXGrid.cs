@@ -142,17 +142,22 @@ function renderedFunc(element) {
     element.jqxCheckBox();
     element.on('click', function (event) {
         var checked = element.jqxCheckBox('checked');
-
-        if (checked) {
-            var rows = grid.jqxDataTable('getRows');
-            for (var i = 0; i < rows.length; i++) {
-                grid.jqxDataTable('selectRow', i);
-                grid.find("".jqx_datatable_checkbox"").attr(""checked"", ""checked"")
-            }
-        } else {
-            grid.jqxDataTable('clearSelection');
-            grid.find("".jqx_datatable_checkbox"").removeAttr(""checked"", ""checked"")
-        }
+        var time = $(""body"").data("""+gridSelector+ @""");
+                     if (time == null) {
+                         time = 1000;
+                         $(""body"").data(""" + gridSelector + @""",0);
+                     }
+                     setTimeout(function () {
+                        if (checked) {
+                            var rows = grid.jqxDataTable('getRows');
+                            for (var i = 0; i < rows.length; i++) {
+                                grid.jqxDataTable('selectRow', i);
+                                grid.find("".jqx_datatable_checkbox"").attr(""checked"", ""checked"")
+                            }
+                        } else {
+                            grid.jqxDataTable('clearSelection');
+                            grid.find("".jqx_datatable_checkbox"").removeAttr(""checked"", ""checked"")
+                        }},time)
     });
     return true;
 }
