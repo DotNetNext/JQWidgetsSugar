@@ -111,7 +111,31 @@ namespace JQWidgetsSugar
 ";
             reval = string.Format(@"$(function(){{  {0};
 {1} }})", reval, checkBoxEeventHtml);
-            reval = ("<script>\r\n") + reval + ("\n\r</script>");
+            reval = ("<script>\r\n") + reval
+
+                + @"
+$(function () {
+            var data = $(""body"").on(""click"", """ + gridSelector + @" .jqx_datatable_checkbox"", function () {
+                if ($(""body"").data(""checkboxloading"") == null) {
+                    var th = $(this);
+                    var index = th.attr(""data-cbindex"");
+                   console.log(index)
+                    var num = 0;
+                   var setInt = setInterval(function () {
+                        $(""" + gridSelector + @" .jqx_datatable_checkbox"").eq(index).prop(""checked"", true);
+                      
+                       num = num + 100;
+                       if (num / 100 == 15) {
+                           clearInterval(setInt);
+                        }
+                    }, 100);
+                }
+            });
+            setTimeout(function () {
+                $(""body"").data(""checkboxloading"", true);
+            }, 2000);
+       })"
+                + ("\n\r</script>");
 
             reval = FuncAction(reval, @"""cellsRenderer""\:""(.*?)""");
             reval = FuncAction(reval, @"""renderer""\:""(.*?)""");
@@ -129,7 +153,7 @@ namespace JQWidgetsSugar
         {
             string reval = @"
 function cellsRendererFunc(row, column, value, rowData) {
-    return ""<input class=\""jqx_datatable_checkbox\"" index=\"""" + row + ""\"" type=\""checkbox\""  style=\""margin:auto\"" />"";
+    return ""<input data-cbindex=\"""" + row + ""\"" class=\""jqx_datatable_checkbox\"" index=\"""" + row + ""\"" type=\""checkbox\""  style=\""margin:auto\"" />"";
 }
  
 function rendererFunc() {
